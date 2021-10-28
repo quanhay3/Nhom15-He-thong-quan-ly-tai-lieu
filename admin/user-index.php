@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['mySession'])){
+    header('location:login.php');
+  }
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +27,8 @@
     <div class="col-12 col-lg-3">
 		<div class="card">
 			<div class="card-body">
-      <a href="logout.php"> <button type="submit" name="Logout">Đăng xuất</button> </a>
-				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary">Welcome</a>
+      		<a href="logout.php"> <button type="submit" name="Logout" class="mb-4 btn btn-danger">Đăng xuất</button> </a>
+				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary ">Add File</a>
 				</div>
 				<h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">

@@ -18,8 +18,7 @@
     <div class="col-12 col-lg-3">
 		<div class="card">
 			<div class="card-body">
-				<a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/login.php">Đăng nhập</a>
-				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary">Welcome</a>
+				<div class="d-grid"> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="btn btn-primary ">Đăng nhập</a>
 				</div>
 				<h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">
