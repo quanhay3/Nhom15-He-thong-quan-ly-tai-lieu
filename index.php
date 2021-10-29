@@ -253,12 +253,12 @@ if($_SESSION['username']!="")
 	<h2 style="color:yellow;">NHÓM XÂY DỰNG WEBSITE:</h2>
 	<hr style='width: 330px;'>
 	<br>
-	<h3>Hồ Mạnh Cường</h3>
-	<h3>Trần Văn Đông</h3>
-	<h3>Nguyễn Vũ Công Quyền</h3>
+	<h3>Nguyễn Quang Anh</h3>
+	<h3>Đỗ Mạnh Chiến</h3>
+	<h3>Nguyễn Phụ Quân</h3>
 	</div>
 	<div class="rightft"> 
-		<h3>Địa chỉ: ...... huyện Thuận Thành, tỉnh Bắc Ninh</h3>
+		<h3>Địa chỉ: Hà Nội</h3>
 	<h3>Số ĐT:1234567890</h3>
 	<h3>Email:..........@gmail.com</h3>
 	</div>
