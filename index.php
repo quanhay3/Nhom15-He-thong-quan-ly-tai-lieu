@@ -1,364 +1,268 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-    <link href="css/Style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+ <meta charset="utf-8" />
+    <title>Quản lý tài liệu</title>
+    <meta name="author" content="Trần Đông" />
+    <meta name="description" content="Học làm web đơn giản" />
+    <meta name="keyword" content="Hoc html, huong dan html, html co ban" />
+	<link href="images/icon.png" rel="shortcut icon">
+	<link type="text/css" href="style.css" rel="stylesheet">
+	    <script src="js\jssor.slider.min.js" type="text/javascript"></script>
+	    <script >/* Demo purposes only */
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+</script>
 </head>
 <body>
+<div id="lienhe">
+ <img src="images\icon_phone_header.png" />
+ <p>Hotline: 1234567890</p>
+ <img src="images\icon_fb.png" />
+ <img src="images\icon_skype.png" />
+ <img src="images\icon_gg.png" />
+</div>
+<div class="header"> 
+<div id="logo">
+<a href='index.php'><img src="images\logo.png" /></a>
+</div>
+<div id="banner">
+<img src='images/Capture.png' style='margin-top:-3px;'>
+</div>
+</div>
+<div id="menu">
+<ul class="aaa">
+<li><a href="index.php">Trang chủ</a></li>
+<li><a href="#">Danh Mục</a>
+<ul class="sub">
+<?php
+	include "csdl.php";
+	menudanhmuc();
+?>
+</ul>
+</li>
+<li><a href="gioithieu.php">Giới Thiệu</a></li>
+<li><a href="upload.php" onclick="<?php if($_SESSION['username']=="")
+{echo "alert('Bạn chưa đăng nhập hệ thống')";} ?>">Upload</a></li>
+<li><a href="thongke.php">Thống kê</a></li>
+<?php
+if($_SESSION['username']=="")
+{echo "<li><a href='http://localhost/webdemo:81/login/login.php'>Đăng nhập</a></li>";}
+else
+{
+if($_SESSION['role']=="1")
+{echo "<li><a href='quantri.php'>Quản trị</a></li><li><a href='logout.php' onclick=' return logout()'>Đăng xuất</a></li>";}
+else
+{echo "<li><a href='logout.php'>Đăng xuất</a></li>";}
+}
+?>
+</ul>
+<script>
+function logout()
+{return confirm('Bạn có muốn đăng xuất không?')}
+</script>
+<div class="search-form">
 
-<div class="container" style = "margin-top:30px">
-<div class="row">
-    <div class="col-12 col-lg-3">
-		<div class="card">
-			<div class="card-body">
-				<div class="d-grid"> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="btn btn-primary ">Đăng nhập</a>
-				</div>
-				<h5 class="my-3">My Drive</h5>
-				<div class="fm-menu">
-					<div class="list-group list-group-flush"> <a href="javascript:;" class="list-group-item py-1"><i class="bx bx-folder me-2"></i><span>All Files</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-devices me-2"></i><span>My Devices</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-analyse me-2"></i><span>Recents</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-plug me-2"></i><span>Important</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-trash-alt me-2"></i><span>Deleted Files</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-file me-2"></i>
-                    <span>Documents</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-image me-2"></i><span>Images</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-video me-2"></i><span>Videos</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-music me-2"></i><span>Audio</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-beer me-2"></i><span>Zip Files</span></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card">
-			<div class="card-body">
-				<h5 class="mb-0 text-primary font-weight-bold">45.5 GB <span class="float-end text-secondary">50 GB</span></h5>
-				<p class="mb-0 mt-2"><span class="text-secondary">Used</span><span class="float-end text-primary">Upgrade</span>
-				</p>
-				<div class="progress mt-3" style="height:7px;">
-					<div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-					<div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-					<div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
-				<div class="mt-3"></div>
-				<div class="d-flex align-items-center">
-					<div class="fm-file-box bg-light-primary text-primary"><i class="bx bx-image"></i>
-					</div>
-					<div class="flex-grow-1 ms-2">
-						<h6 class="mb-0">Images</h6>
-						<p class="mb-0 text-secondary">1,756 files</p>
-					</div>
-					<h6 class="text-primary mb-0">15.3 GB</h6>
-				</div>
-				<div class="d-flex align-items-center mt-3">
-					<div class="fm-file-box bg-light-success text-success"><i class="bx bxs-file-doc"></i>
-					</div>
-					<div class="flex-grow-1 ms-2">
-						<h6 class="mb-0">Documents</h6>
-						<p class="mb-0 text-secondary">123 files</p>
-					</div>
-					<h6 class="text-primary mb-0">256 MB</h6>
-				</div>
-				<div class="d-flex align-items-center mt-3">
-					<div class="fm-file-box bg-light-danger text-danger"><i class="bx bx-video"></i>
-					</div>
-					<div class="flex-grow-1 ms-2">
-						<h6 class="mb-0">Media Files</h6>
-						<p class="mb-0 text-secondary">24 files</p>
-					</div>
-					<h6 class="text-primary mb-0">3.4 GB</h6>
-				</div>
-				<div class="d-flex align-items-center mt-3">
-					<div class="fm-file-box bg-light-warning text-warning"><i class="bx bx-image"></i>
-					</div>
-					<div class="flex-grow-1 ms-2">
-						<h6 class="mb-0">Other Files</h6>
-						<p class="mb-0 text-secondary">458 files</p>
-					</div>
-					<h6 class="text-primary mb-0">3 GB</h6>
-				</div>
-				<div class="d-flex align-items-center mt-3">
-					<div class="fm-file-box bg-light-info text-info"><i class="bx bx-image"></i>
-					</div>
-					<div class="flex-grow-1 ms-2">
-						<h6 class="mb-0">Unknown Files</h6>
-						<p class="mb-0 text-secondary">57 files</p>
-					</div>
-					<h6 class="text-primary mb-0">178 GB</h6>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 col-lg-9">
-		<div class="card">
-			<div class="card-body">
-				<div class="fm-search">
-					<div class="mb-0">
-						<div class="input-group input-group-lg">	<span class="input-group-text bg-transparent"><i class="fa fa-search"></i></span>
-							<input type="text" class="form-control" placeholder="Search the files">
-						</div>
-					</div>
-				</div>
-				<div class="row mt-3">
-					<div class="col-12 col-lg-4">
-						<div class="card shadow-none border radius-15">
-							<div class="card-body">
-								<div class="d-flex align-items-center">
-									<div class="fm-icon-box radius-15 bg-primary text-white"><i class="lni lni-google-drive"></i>
-									</div>
-									<div class="ms-auto font-24"><i class="fa fa-ellipsis-h"></i>
-									</div>
-								</div>
-								<h5 class="mt-3 mb-0">Google Drive</h5>
-								<p class="mb-1 mt-4"><span>45.5 GB</span>  <span class="float-end">50 GB</span>
-								</p>
-								<div class="progress" style="height: 7px;">
-									<div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-lg-4">
-						<div class="card shadow-none border radius-15">
-							<div class="card-body">
-								<div class="d-flex align-items-center">
-									<div class="fm-icon-box radius-15 bg-danger text-white"><i class="lni lni-dropbox-original"></i>
-									</div>
-									<div class="ms-auto font-24"><i class="fa fa-ellipsis-h"></i>
-									</div>
-								</div>
-								<h5 class="mt-3 mb-0">Dropbox</h5>
-								<p class="mb-1 mt-4"><span>1,2 GB</span>  <span class="float-end">3 GB</span>
-								</p>
-								<div class="progress" style="height: 7px;">
-									<div class="progress-bar bg-danger" role="progressbar" style="width: 45%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-lg-4">
-						<div class="card shadow-none border radius-15">
-							<div class="card-body">
-								<div class="d-flex align-items-center">
-									<div class="fm-icon-box radius-15 bg-warning text-dark"><i class="bx bxs-door-open"></i>
-									</div>
-									<div class="ms-auto font-24"><i class="fa fa-ellipsis-h"></i>
-									</div>
-								</div>
-								<h5 class="mt-3 mb-0">OneDrive</h5>
-								<p class="mb-1 mt-4"><span>2,5 GB</span>  <span class="float-end">3 GB</span>
-								</p>
-								<div class="progress" style="height: 7px;">
-									<div class="progress-bar bg-warning" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--end row-->
-				<h5>Folders</h5>
-				<div class="row mt-3">
-					<div class="col-12 col-lg-4">
-						<div class="card shadow-none border radius-15">
-							<div class="card-body">
-								<div class="d-flex align-items-center">
-									<div class="font-30 text-primary"><i class="bx bxs-folder"></i>
-									</div>
-									<div class="user-groups ms-auto">
-										<img src="https://bootdey.com/img/Content/avatar/avatar1.png" width="35" height="35" class="rounded-circle" alt="">
-										<img src="https://bootdey.com/img/Content/avatar/avatar2.png" width="35" height="35" class="rounded-circle" alt="">
-									</div>
-									<div class="user-plus">+</div>
-								</div>
-								<h6 class="mb-0 text-primary">Analytics</h6>
-								<small>15 files</small>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-lg-4">
-						<div class="card shadow-none border radius-15">
-							<div class="card-body">
-								<div class="d-flex align-items-center">
-									<div class="font-30 text-primary"><i class="bx bxs-folder"></i>
-									</div>
-									<div class="user-groups ms-auto">
-										<img src="https://bootdey.com/img/Content/avatar/avatar7.png" width="35" height="35" class="rounded-circle" alt="">
-									</div>
-								</div>
-								<h6 class="mb-0 text-primary">Assets</h6>
-								<small>345 files</small>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-lg-4">
-						<div class="card shadow-none border radius-15">
-							<div class="card-body">
-								<div class="d-flex align-items-center">
-									<div class="font-30 text-primary"><i class="bx bxs-folder"></i>
-									</div>
-									<div class="user-groups ms-auto">
-										<img src="https://bootdey.com/img/Content/avatar/avatar2.png" width="35" height="35" class="rounded-circle" alt="">
-										<img src="https://bootdey.com/img/Content/avatar/avatar3.png" width="35" height="35" class="rounded-circle" alt="">
-									</div>
-								</div>
-								<h6 class="mb-0 text-primary">Marketing</h6>
-								<small>143 files</small>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--end row-->
-				<div class="d-flex align-items-center">
-					<div>
-						<h5 class="mb-0">Recent Files</h5>
-					</div>
-					<div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-outline-secondary">View all</a>
-					</div>
-				</div>
-				<div class="table-responsive mt-3">
-					<table class="table table-striped table-hover table-sm mb-0">
-						<thead>
-							<tr>
-								<th>Name <i class="bx bx-up-arrow-alt ms-2"></i>
-								</th>
-								<th>Members</th>
-								<th>Last Modified</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
-										</div>
-										<div class="font-weight-bold text-danger">Competitor Analysis Template</div>
-									</div>
-								</td>
-								<td>Only you</td>
-								<td>Sep 3, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">How to Create a Case Study</div>
-									</div>
-								</td>
-								<td>3 members</td>
-								<td>Jun 12, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">Landing Page Structure</div>
-									</div>
-								</td>
-								<td>10 members</td>
-								<td>Jul 17, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
-										</div>
-										<div class="font-weight-bold text-danger">Meeting Report</div>
-									</div>
-								</td>
-								<td>5 members</td>
-								<td>Aug 28, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>       
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">Project Documents</div>
-									</div>
-								</td>
-								<td>Only you</td>
-								<td>Aug 17, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-doc me-2 font-24 text-success"></i>
-										</div>
-										<div class="font-weight-bold text-success">Review Checklist Template</div>
-									</div>
-								</td>
-								<td>7 members</td>
-								<td>Sep 8, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">How to Create a Case Study</div>
-									</div>
-								</td>
-								<td>3 members</td>
-								<td>Jun 12, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">Landing Page Structure</div>
-									</div>
-								</td>
-								<td>10 members</td>
-								<td>Jul 17, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-doc me-2 font-24 text-success"></i>
-										</div>
-										<div class="font-weight-bold text-success">Review Checklist Template</div>
-									</div>
-								</td>
-								<td>7 members</td>
-								<td>Sep 8, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
+        <form id="searchform" method="get" action="timkiem.php">
+  <div class="searchform-wrapper"><input type="text" value="" name="s" id="s" placeholder="Tìm kiếm..." />
+  <input type="submit" class="send" name="searchsubmit"  /></div>
+</form>      
 </div>
+<?php 
+if($_SESSION['username']!="")
+{echo "<div class='xinchao'>Xin chào,".$_SESSION['username']."!</div>";} ?>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+<div class="slider">
+<div class="leftqc">
+<img src="images\bannerfpt.jpg" />
+</div>
+<script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:500,$Delay:30,$Cols:8,$Rows:4,$Clip:15,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:2049,$Easing:$Jease$.$OutQuad},
+              {$Duration:500,$Delay:80,$Cols:8,$Rows:4,$Clip:15,$SlideOut:true,$Easing:$Jease$.$OutQuad},
+              {$Duration:1000,x:-0.2,$Delay:40,$Cols:12,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Assembly:260,$Easing:{$Left:$Jease$.$InOutExpo,$Opacity:$Jease$.$InOutQuad},$Opacity:2,$Outside:true,$Round:{$Top:0.5}},
+              {$Duration:2000,y:-1,$Delay:60,$Cols:15,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Easing:$Jease$.$OutJump,$Round:{$Top:1.5}},
+              {$Duration:1200,x:0.2,y:-0.1,$Delay:20,$Cols:8,$Rows:4,$Clip:15,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:260,$Easing:{$Left:$Jease$.$InWave,$Top:$Jease$.$InWave,$Clip:$Jease$.$OutQuad},$Round:{$Left:1.3,$Top:2.5}}
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 980;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+    <style>
+        /* jssor slider loading skin spin css */
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-009-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .jssorb053 .i {position:absolute;cursor:pointer;}
+        .jssorb053 .i .b {fill:#fff;fill-opacity:0.5;}
+        .jssorb053 .i:hover .b {fill-opacity:.7;}
+        .jssorb053 .iav .b {fill-opacity: 1;}
+        .jssorb053 .i.idn {opacity:.3;}
+
+        .jssora093 {display:block;position:absolute;cursor:pointer;}
+        .jssora093 .c {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;}
+        .jssora093 .a {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;}
+        .jssora093:hover {opacity:.8;}
+        .jssora093.jssora093dn {opacity:.6;}
+        .jssora093.jssora093ds {opacity:.3;pointer-events:none;}
+    </style>
+	<!-- style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:480px;overflow:hidden;visibility:hidden;z-index:20;" -->
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:520px;overflow:hidden;visibility:hidden;z-index:20;float:left;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left: 0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:520px;overflow:hidden;">
+           <div>
+                <img data-u="image" src="images/slider1.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="images\slider2.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="images\slider3.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="images\slider4.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="images\tailieuonline.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="images\tai-lieu-online.jpg" />
+            </div>
+			<div>
+                <img data-u="image" src="images\download-banner.jpg" />
+            </div>
+
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb053" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <path class="b" d="M11400,13800H4600c-1320,0-2400-1080-2400-2400V4600c0-1320,1080-2400,2400-2400h6800 c1320,0,2400,1080,2400,2400v6800C13800,12720,12720,13800,11400,13800z"></path>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora093" style="width:50px;height:50px;top:0px;left:30px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <circle class="c" cx="8000" cy="8000" r="5920"></circle>
+                <polyline class="a" points="7777.8,6080 5857.8,8000 7777.8,9920 "></polyline>
+                <line class="a" x1="10142.2" y1="8000" x2="5857.8" y2="8000"></line>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora093" style="width:50px;height:50px;top:0px;right:30px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <circle class="c" cx="8000" cy="8000" r="5920"></circle>
+                <polyline class="a" points="8222.2,6080 10142.2,8000 8222.2,9920 "></polyline>
+                <line class="a" x1="5857.8" y1="8000" x2="10142.2" y2="8000"></line>
+            </svg>
+        </div>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();</script>
+	<br>
+	<div class="rightqc">
+<img src="images\4dduOT57856_r_2.gif" />
+</div>
+	</div>
+<br>
+<br>
+<br>
+<br>
+	<div class="main" style='overflow:hidden; background: url(images/slider3.jpg) ;'>
+	<?php
+	echo"<div class='tlm_tlnb' style='display:block;'>";
+		tailieumoi();
+		echo"</div>";
+		tailieunoibat();
+		
+	?>
+	</div>
+	</div>
+	<br>
+<div class="footer">
+	<div class="leftft">
+	<h2 style="color:yellow;">NHÓM XÂY DỰNG WEBSITE:</h2>
+	<hr style='width: 330px;'>
+	<br>
+	<h3>Hồ Mạnh Cường</h3>
+	<h3>Trần Văn Đông</h3>
+	<h3>Nguyễn Vũ Công Quyền</h3>
+	</div>
+	<div class="rightft"> 
+		<h3>Địa chỉ: ...... huyện Thuận Thành, tỉnh Bắc Ninh</h3>
+	<h3>Số ĐT:1234567890</h3>
+	<h3>Email:..........@gmail.com</h3>
+	</div>
+	</div>
 </body>
+
 </html>
