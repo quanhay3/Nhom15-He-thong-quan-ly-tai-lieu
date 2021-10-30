@@ -12,13 +12,31 @@
     <title>Document</title>
 </head>
 <body>
+<div class="row-nav-menu">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/">Trang Chủ</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                    </div>
+                </div>
+            </nav> 
+</div>
 <div class="container" style = "margin-top:30px">
 <div class="row">
     <div class="col-12 col-lg-3">
 		<div class="card">
 			<div class="card-body">
-				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary">+ Add File</a>
+				<div class="d-grid"> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="btn btn-primary ">Đăng nhập</a>
 				</div>
 				<h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">
