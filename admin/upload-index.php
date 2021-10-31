@@ -7,6 +7,24 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        form{
+        width: 30%;
+        margin:100px auto;
+        padding: 30px;
+        border: 5px solid lightblue;
+}
+input{
+    width: 100%;
+    display: block;
+}
+button{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+    </style>
     <div class ="container">
         <div class="row">
             <form action="upload-index.php" method="post" encytype="multipart/form-data">
