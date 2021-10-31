@@ -64,7 +64,7 @@
 		<div class="card">
 			<div class="card-body">
       		<a href="logout.php"> <button type="submit" name="Logout" class="mb-4 btn btn-danger">Đăng xuất</button> </a>
-				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary ">Add File</a>
+				<div class="d-grid"> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/upload-index.php" class="btn btn-primary ">Add File</a>
 				</div>
 				<h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">
