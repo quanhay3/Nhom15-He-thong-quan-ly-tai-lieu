@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['mySession'])){
+    header('location:admin-login.php');
+  }
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -189,7 +198,8 @@ $(document).ready(function(){
                         <h2>User <b>Management</b></h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>						
+                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        <a href="admin-login.php"> <button type="submit" name="Logout" class="mb-4 btn btn-danger">Đăng xuất</button> </a>						
                     </div>
                 </div>
             </div>
