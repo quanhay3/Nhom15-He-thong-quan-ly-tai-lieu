@@ -8,7 +8,7 @@
         $result = mysqli_query($conn,$sql);
         if(mysqli_num_rows($result) == 1){
             $_SESSION['mySession'] = $username;
-            header("location:http://localhost:81/project/admin/user-index.php");
+            header("location:http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php");
         }else{
             $response = 'failed_password';
             header("location:login.php?response=$response");

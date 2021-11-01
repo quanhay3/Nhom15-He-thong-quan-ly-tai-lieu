@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2021 at 11:50 AM
+-- Generation Time: Oct 31, 2021 at 04:44 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `files_management`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `documents`
+--
+
+CREATE TABLE `documents` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `size` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `documents`
+--
+
+INSERT INTO `documents` (`id`, `name`, `size`) VALUES
+(1, 'ádfasdcsacdsac.docx', 0),
+(2, 'ádfasdcsacdsac.docx', 0),
+(3, 'ádfasdcsacdsac.docx', 11935),
+(4, '12324135345.docx', 11918),
+(5, 'Bài tập Java số 2.pdf', 596832),
+(6, '2021_Web Programming Projects.pdf', 299057),
+(7, 'Dethigiuaky_2021.pdf', 136277),
+(8, 'screenshot xoa.png', 241014),
+(9, 'Report_2021.docx', 794045);
 
 -- --------------------------------------------------------
 
@@ -51,6 +78,12 @@ INSERT INTO `user` (`id`, `username`, `email`, `password`, `level`) VALUES
 --
 
 --
+-- Indexes for table `documents`
+--
+ALTER TABLE `documents`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -59,6 +92,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `documents`
+--
+ALTER TABLE `documents`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user`
