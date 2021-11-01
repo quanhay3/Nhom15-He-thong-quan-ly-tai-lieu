@@ -11,6 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
 body {
     color: #566787;
@@ -225,6 +226,8 @@ $(document).ready(function(){
                             <td><?php echo $row['username']; ?> </td>
                             <td><?php echo $row['email']; ?> </td>
                             <td><?php echo $row['password']; ?> </td>
+                            <td><i class="fas fa-edit"></i></a></td>
+                            <td><i class="fas fa-trash"></i></a></td>
                             </tr>
                             <?php
                                 $i++;
