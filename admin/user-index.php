@@ -64,7 +64,7 @@
 		<div class="card">
 			<div class="card-body">
       		<a href="logout.php"> <button type="submit" name="Logout" class="mb-4 btn btn-danger">Đăng xuất</button> </a>
-				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary ">Add File</a>
+				<div class="d-grid"> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/upload-index.php" class="btn btn-primary ">Add File</a>
 				</div>
 				<h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">
@@ -264,140 +264,54 @@
 				<div class="d-flex align-items-center">
 					<div>
 						<h5 class="mb-0">Recent Files</h5>
+						
+
 					</div>
 					<div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-outline-secondary">View all</a>
 					</div>
 				</div>
 				<div class="table-responsive mt-3">
-					<table class="table table-striped table-hover table-sm mb-0">
+				<table class="table table-striped table-hover table-sm mb-0">
 						<thead>
 							<tr>
-								<th>Name <i class="bx bx-up-arrow-alt ms-2"></i>
-								</th>
-								<th>Members</th>
-								<th>Last Modified</th>
-								<th></th>
+							<th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Size</th>
+							<th scope="col">Download</th>
 							</tr>
+							
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
-										</div>
-										<div class="font-weight-bold text-danger">Competitor Analysis Template</div>
-									</div>
-								</td>
-								<td>Only you</td>
-								<td>Sep 3, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">How to Create a Case Study</div>
-									</div>
-								</td>
-								<td>3 members</td>
-								<td>Jun 12, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">Landing Page Structure</div>
-									</div>
-								</td>
-								<td>10 members</td>
-								<td>Jul 17, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
-										</div>
-										<div class="font-weight-bold text-danger">Meeting Report</div>
-									</div>
-								</td>
-								<td>5 members</td>
-								<td>Aug 28, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>       
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">Project Documents</div>
-									</div>
-								</td>
-								<td>Only you</td>
-								<td>Aug 17, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-doc me-2 font-24 text-success"></i>
-										</div>
-										<div class="font-weight-bold text-success">Review Checklist Template</div>
-									</div>
-								</td>
-								<td>7 members</td>
-								<td>Sep 8, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">How to Create a Case Study</div>
-									</div>
-								</td>
-								<td>3 members</td>
-								<td>Jun 12, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">Landing Page Structure</div>
-									</div>
-								</td>
-								<td>10 members</td>
-								<td>Jul 17, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-doc me-2 font-24 text-success"></i>
-										</div>
-										<div class="font-weight-bold text-success">Review Checklist Template</div>
-									</div>
-								</td>
-								<td>7 members</td>
-								<td>Sep 8, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-						</tbody>
+                            <?php
+                                //lấy dữ liệu từ CSDL và để ra bảng (phần lặp lại)
+                                //bước 1:kết nối tời csdl(mysql)
+                                $conn = mysqli_connect('localhost','root','','files_management');
+                                if(!$conn){
+                                    die("Không thể kết nối,kiểm tra lại các tham số kết nối");
+                                }
+
+                                //bước 2 khai báo câu lệnh thực thi và thực hiện truy vấn
+                                $sql = "SELECT * FROM documents";
+                                $result = mysqli_query($conn,$sql);
+
+                                //bước 3 xử lý kết quả trả về
+                                if(mysqli_num_rows($result) > 0){
+                                    $i=1;
+                                    while($row = mysqli_fetch_assoc($result)){
+                            ?>
+                            
+                            <tr>
+                            <th scope="row"><?php echo $i; ?> </th>
+                            <td><?php echo $row['name']; ?> </td>
+                            <td><?php echo $row['size']; ?> </td>
+							<td><a href="download.php?id= <?php echo $row['id']; ?>"><i class="fas fa-file-download"></i></a></td>
+                            </tr>
+                            <?php
+                                $i++;
+                                }
+                            }
+                            ?>
+                        </tbody>
 					</table>
 				</div>
 			</div>
