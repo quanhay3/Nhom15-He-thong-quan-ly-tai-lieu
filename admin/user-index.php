@@ -42,11 +42,10 @@
                             Thông tin
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
+
                             <li><a class="dropdown-item" href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/add-information-user.php">Thông tin cá nhân</a></li>
-=======
+
                             <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/information-user.php">Thông tin cá nhân</a></li>
->>>>>>> 2149aee91039b7d593dda32152086645c2794771
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Thông tin tác giả</a></li>
                         </ul>
