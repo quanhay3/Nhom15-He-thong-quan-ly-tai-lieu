@@ -1,3 +1,25 @@
+<?php
+    include('../config/connect.php');
+    session_start();
+    if(isset($_POST['btnLogin'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $sql = "SELECT * FROM admin WHERE username='$username' and password='$password' ";
+        $result = mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) == 1){
+            $_SESSION['mySession'] = $username;
+            header("location:http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/admin-index.php");
+        }else{
+            $response = 'failed_password';
+            header("location:admin-login.php?response=$response");
+
+        }
+        
+    }
+
+
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +30,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-    <title>Đăng nhập</title>
+    <title>Admin</title>
   </head>
   <body>
   <section class="vh-100">
@@ -18,12 +40,12 @@
 
         <div class="px-5 ms-xl-4">
           <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-          <span class="h1 fw-bold mb-0">File Management</span>
+          <span class="h1 fw-bold mb-0">Admin</span>
         </div>
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-        <form action="process-login.php" method="post">
+        <form action="" method="post">
 
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
 
@@ -49,16 +71,13 @@
                  }
               ?>
 
-            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-            <p>Don't have an account? <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/register.php" class="link-info">Register here</a></p>
-
           </form>
 
         </div>
 
       </div>
       <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="../images/logo.jpg" alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+        <img src="../images/admin.jpg" alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
       </div>
     </div>
   </div>

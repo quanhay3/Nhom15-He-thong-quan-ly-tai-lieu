@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <link href="css/Style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -244,132 +245,41 @@
 					<table class="table table-striped table-hover table-sm mb-0">
 						<thead>
 							<tr>
-								<th>Name <i class="bx bx-up-arrow-alt ms-2"></i>
-								</th>
-								<th>Members</th>
-								<th>Last Modified</th>
-								<th></th>
+							<th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Size</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
-										</div>
-										<div class="font-weight-bold text-danger">Competitor Analysis Template</div>
-									</div>
-								</td>
-								<td>Only you</td>
-								<td>Sep 3, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">How to Create a Case Study</div>
-									</div>
-								</td>
-								<td>3 members</td>
-								<td>Jun 12, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">Landing Page Structure</div>
-									</div>
-								</td>
-								<td>10 members</td>
-								<td>Jul 17, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
-										</div>
-										<div class="font-weight-bold text-danger">Meeting Report</div>
-									</div>
-								</td>
-								<td>5 members</td>
-								<td>Aug 28, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>       
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">Project Documents</div>
-									</div>
-								</td>
-								<td>Only you</td>
-								<td>Aug 17, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-doc me-2 font-24 text-success"></i>
-										</div>
-										<div class="font-weight-bold text-success">Review Checklist Template</div>
-									</div>
-								</td>
-								<td>7 members</td>
-								<td>Sep 8, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">How to Create a Case Study</div>
-									</div>
-								</td>
-								<td>3 members</td>
-								<td>Jun 12, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
-										</div>
-										<div class="font-weight-bold text-primary">Landing Page Structure</div>
-									</div>
-								</td>
-								<td>10 members</td>
-								<td>Jul 17, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="d-flex align-items-center">
-										<div><i class="bx bxs-file-doc me-2 font-24 text-success"></i>
-										</div>
-										<div class="font-weight-bold text-success">Review Checklist Template</div>
-									</div>
-								</td>
-								<td>7 members</td>
-								<td>Sep 8, 2019</td>
-								<td><i class="fa fa-ellipsis-h font-24"></i>
-								</td>
-							</tr>
-						</tbody>
+                            <?php
+                                //lấy dữ liệu từ CSDL và để ra bảng (phần lặp lại)
+                                //bước 1:kết nối tời csdl(mysql)
+                                $conn = mysqli_connect('localhost','root','','files_management');
+                                if(!$conn){
+                                    die("Không thể kết nối,kiểm tra lại các tham số kết nối");
+                                }
+
+                                //bước 2 khai báo câu lệnh thực thi và thực hiện truy vấn
+                                $sql = "SELECT * FROM documents";
+                                $result = mysqli_query($conn,$sql);
+
+                                //bước 3 xử lý kết quả trả về
+                                if(mysqli_num_rows($result) > 0){
+                                    $i=1;
+                                    while($row = mysqli_fetch_assoc($result)){
+                            ?>
+                            
+                            <tr>
+                            <th scope="row"><?php echo $i; ?> </th>
+                            <td><?php echo $row['name']; ?> </td>
+                            <td><?php echo $row['size']; ?> </td>
+                            </tr>
+                            <?php
+                                $i++;
+                                }
+                            }
+                            ?>
+                        </tbody>
 					</table>
 				</div>
 			</div>
@@ -377,6 +287,80 @@
 	</div>
 </div>
 </div>
+<footer class="bg-light text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #333333;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-danger p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-danger" href="http://localhost:81/dhtl/index.php">TLU</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+  
+</div>
+<!-- End of .container -->            
+  </body>
+</html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
