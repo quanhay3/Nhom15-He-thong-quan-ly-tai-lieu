@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2021 at 09:42 AM
+-- Generation Time: Nov 02, 2021 at 05:39 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -20,24 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `files_management`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`username`, `password`) VALUES
-('admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -59,6 +41,27 @@ INSERT INTO `documents` (`id`, `name`, `size`) VALUES
 (13, '2021_Web Programming Projects.pdf', 299057),
 (14, 'Report_2021.docx', 794045),
 (15, 'Dethigiuaky_2021.pdf', 136277);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `information_user`
+--
+
+CREATE TABLE `information_user` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `documents_upload` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `upload_date` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `information_user`
+--
+
+INSERT INTO `information_user` (`id`, `name`, `phone`, `documents_upload`, `upload_date`) VALUES
+(1, 'Nguyễn Văn A', '123456789', 'mmt.docx', '22/10/2021');
 
 -- --------------------------------------------------------
 
@@ -94,6 +97,12 @@ ALTER TABLE `documents`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `information_user`
+--
+ALTER TABLE `information_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -108,6 +117,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `documents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `information_user`
+--
+ALTER TABLE `information_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
