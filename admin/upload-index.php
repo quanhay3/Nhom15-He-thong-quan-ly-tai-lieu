@@ -1,36 +1,29 @@
 <?php 
 
-include('../config/connect.php');
+//include('../config/connect.php');
+include('process-download.php');
 
 
 if (isset($_POST['upload'])) { // If isset upload button or not
 	// Declaring Variables
-	$location = "uploads/";
+	$location = "downloads/";
 	$file_name = $_FILES["file"]["name"]; // Get uploaded file name
 	$file_temp = $_FILES["file"]["tmp_name"]; // Get uploaded file temp
 	$file_size = $_FILES["file"]["size"]; // Get uploaded file size
 	if ($file_size > 10485760) { // Check file size 10mb or not
-
 		echo "<script>alert('Tải lên không thành công. Dung lượng quá lớn.')</script>";
-
 	} else {
 		$sql = "INSERT INTO documents (name, size)
 				VALUES ('$file_name', '$file_size')";
 		$result = mysqli_query($conn, $sql);
 		if ($result) {
-
 			echo "<script>alert('Tải lên thành công.')</script>";
-
-
 			// Select id from database
 			$sql = "SELECT id FROM documents ORDER BY id DESC";
 			$result = mysqli_query($conn, $sql);
 			
 		} else {
-
 			echo "<script>alert('Không tải lên được.')</script>";
-
-
 		}
 	}
 }
@@ -64,6 +57,8 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 				</p>
 			</label>
 			<button name="upload" class="btn">Upload</button>
+			<a class="navbar-brand" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php">Return</a>
+
 		</form>
 	</div>
 </body>
