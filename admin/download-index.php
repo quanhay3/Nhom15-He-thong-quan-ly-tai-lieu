@@ -271,91 +271,30 @@
 					</div>
 				</div>
 				<div class="table-responsive mt-3">
-				<table class="table table-striped table-hover table-sm mb-0">
-						
+				<table class="table ">
+						<?php include 'process-download.php';?>
+						<thead>
+						<tr>
+						<th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Size</th>
+						<th scope="col">Download</th>
+						</tr>
+						</thead>
 						<tbody>
-                           
-                        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Size</th>
-      <th scope="col">Dowload</th>
-    </tr>
-  </thead>
-  <tbody>
+						<?php foreach ($files as $file): ?>
+							<tr>
+							<td><?php echo $file['id']; ?></td>
+							<td><?php echo $file['name']; ?></td>
+							<td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
+							
+							<td><a href="upload-index.php?id=<?php echo $file['id'] ?>"><i class="fas fa-download"></i></a></td>
+							</tr>
+						<?php endforeach;?>
 
-
-    <tr>
-      <th scope="row">1</th>
-      <td>2021_Web Programming Projects.pdf</td>
-      <td>299057</td>
-      <td><a href="process-download.php?path=downloads/2021_Web Programming Projects.pdf"><i class="fas fa-download"></a></td>
-    </tr>
-  
-  
-    <tr>
-      <th scope="row">2</th>
-      <td>	Bài tập chương 3.pdf</td>
-      <td>221160</td>
-      <td><a href="process-download.php?path=downloads/Bài tập chương 3.pdf"><i class="fas fa-download"></a></td>
-
-    </tr>
-  
-  
-    <tr>
-      <th scope="row">3</th>
-      <td>	MMT-Chuong1.pdf</td>
-      <td>3050832</td>
-      <td><a href="process-download.php?path=downloads/MMT-Chuong1.pdf"><i class="fas fa-download"></a></td>  
-    </tr>
-   
-   
-    <tr>
-      <th scope="row">4</th>
-      <td>	MMT-Chuong2-v2.pdf</td>
-      <td>2409460</td>
-      <td><a href="process-download.php?path=downloads/MMT-Chuong2-v2.pdf"><i class="fas fa-download"></a></td>  
-    </tr>
-  
-  
-    <tr>
-      <th scope="row">5</th>
-      <td>Tri_tue_nhan_tao_slides.pdf</td>
-      <td>6652173</td>
-      <td><a href="process-download.php?path=downloads/Tri_tue_nhan_tao_slides.pdf"><i class="fas fa-download"></a></td>  
-    </tr>
- 
- 
-    <tr>
-      <th scope="row">6</th>
-      <td>K61HT.xlsx</td>
-      <td>13744</td>
-      <td><a href="process-download.php?path=downloads/K61HT.xlsx"><i class="fas fa-download"></a></td>  
-    </tr>
-
-    <tr>
-      <th scope="row">7</th>
-      <td>Ưu tiên không độc quyền.docx</td>
-      <td>13</td>
-      <td><a href="process-download.php?path=downloads/Ưu tiên không độc quyền.docx"><i class="fas fa-download"></a></td>  
-    </tr>
-
-</tbody>
-</table>
-
-                       
-
-</tbody>
-<tbody>
-                           
-                            
-                            
-
-
-</tbody>
-</table>
+						</tbody>
+</body>						
+				</table>
 				</div>
 			</div>
 		</div>

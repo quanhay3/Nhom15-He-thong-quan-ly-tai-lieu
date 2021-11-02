@@ -1,11 +1,12 @@
 <?php 
 
-include('../config/connect.php');
+//include('../config/connect.php');
+include('process-download.php');
 
 
 if (isset($_POST['upload'])) { // If isset upload button or not
 	// Declaring Variables
-	$location = "uploads/";
+	$location = "downloads/";
 	$file_name = $_FILES["file"]["name"]; // Get uploaded file name
 	$file_temp = $_FILES["file"]["tmp_name"]; // Get uploaded file temp
 	$file_size = $_FILES["file"]["size"]; // Get uploaded file size
@@ -56,6 +57,8 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 				</p>
 			</label>
 			<button name="upload" class="btn">Upload</button>
+			<a class="navbar-brand" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php">Return</a>
+
 		</form>
 	</div>
 </body>
