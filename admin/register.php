@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,26 +12,26 @@
     <title>Đăng ký</title>
   <body>
     <style>
-        .gradient-custom-3 {
-        /* fallback for old browsers */
-        background: #84fab0;
+       .gradient-custom-3 {
+  /* fallback for old browsers */
+  background: #84fab0;
 
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
 
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
-        }
-        .gradient-custom-4 {
-        /* fallback for old browsers */
-        background: #84fab0;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+}
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #84fab0;
 
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
 
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
-        }
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+}
     </style>
   <section class="vh-100 bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/search-box/img4.jpg');">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
@@ -39,14 +40,23 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Đăng ký thành viên</h2>
               
-
+              <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Đăng ký</p>
+                <?php
+                 if(isset($_GET['response'])){
+                     if($_GET['response']=='successfully'){
+                         echo "<p class='text-danger'>Đăng ký thành công, vui lòng vào email nhận mã để kích hoạt tài khoản</p>";
+                     }
+                     if($_GET['response']=='existed'){
+                        echo "<p class='text-danger'>Email tồn tại</p>";
+                    }
+                 }
+                 ?>
               <form action="process-register.php" method="post">
 
                 <div class="form-outline mb-4">
                   <input type="text" id="username" name="username" class="form-control form-control-lg" />
-                  <label class="form-label" for="username">Your Name</label>
+                  <label class="form-label" for="username">User Name</label>
                 </div>
 
                 <div class="form-outline mb-4">
@@ -55,13 +65,13 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="password" name="password" class="form-control form-control-lg" />
-                  <label class="form-label" for="password">Password</label>
+                  <input type="password" id="pass1" name ="pass1" class="form-control form-control-lg" />
+                  <label class="form-label" for="pass1">Password</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="repassword" name="repassword" class="form-control form-control-lg" />
-                  <label class="form-label" for="repassword">Repeat your password</label>
+                  <input type="password" id="pass2" name ="pass2" class="form-control form-control-lg" />
+                  <label class="form-label" for="pass2">Repeat your password</label>
                 </div>
 
                 <div class="form-check d-flex justify-content-center mb-5">
@@ -69,7 +79,7 @@
                     class="form-check-input me-2"
                     type="checkbox"
                     value=""
-                    id="form2Example3cg"
+                    id="checkboxyesno"
                   />
                   <label class="form-check-label" for="form2Example3g">
                     I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
@@ -77,7 +87,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" name="btnRegister">Register</button>
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" name = "btnRegister">Register</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>

@@ -23,20 +23,20 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Giới Thiệu</a>
+                        <a class="nav-link active" aria-current="page" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php">Giới Thiệu</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href=""></a>
                         </li>
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Danh mục
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php">Action</a></li>
+                            <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php">Something else here</a></li>
                         </ul>
                         </li>
                         <li class="nav-item">
@@ -56,80 +56,66 @@
     <div class="col-12 col-lg-3">
 		<div class="card">
 			<div class="card-body">
-				<div class="d-grid"> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="btn btn-primary ">Đăng nhập</a>
+				<div class="d-grid"> <a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="btn btn-primary ">Đăng nhập</a>
 				</div>
 				<h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">
-					<div class="list-group list-group-flush"> <a href="javascript:;" class="list-group-item py-1"><i class="bx bx-folder me-2"></i><span>All Files</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-devices me-2"></i><span>My Devices</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-analyse me-2"></i><span>Recents</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-plug me-2"></i><span>Important</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-trash-alt me-2"></i><span>Deleted Files</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-file me-2"></i>
+					<div class="list-group list-group-flush"> <a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="bx bx-folder me-2"></i><span>All Files</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="bx bx-devices me-2"></i><span>My Devices</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="bx bx-analyse me-2"></i><span>Recents</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="fas fa-download"></i><span>Download</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="bx bx-trash-alt me-2"></i><span>Deleted Files</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="bx bx-file me-2"></i>
                     <span>Documents</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-image me-2"></i><span>Images</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-video me-2"></i><span>Videos</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-music me-2"></i><span>Audio</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-beer me-2"></i><span>Zip Files</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="bx bx-image me-2"></i><span>Images</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="bx bx-video me-2"></i><span>Videos</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="bx bx-music me-2"></i><span>Audio</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><i class="bx bx-beer me-2"></i><span>Zip Files</span></a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="card">
 			<div class="card-body">
-				<h5 class="mb-0 text-primary font-weight-bold">45.5 GB <span class="float-end text-secondary">50 GB</span></h5>
-				<p class="mb-0 mt-2"><span class="text-secondary">Used</span><span class="float-end text-primary">Upgrade</span>
+				<p class="mb-0 mt-2"><span class="text-secondary">Used</span><a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="list-group-item py-1"><span>Upgrades</span></a>
+
 				</p>
-				<div class="progress mt-3" style="height:7px;">
-					<div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-					<div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-					<div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
+				
 				<div class="mt-3"></div>
 				<div class="d-flex align-items-center">
 					<div class="fm-file-box bg-light-primary text-primary"><i class="bx bx-image"></i>
 					</div>
 					<div class="flex-grow-1 ms-2">
 						<h6 class="mb-0">Images</h6>
-						<p class="mb-0 text-secondary">1,756 files</p>
 					</div>
-					<h6 class="text-primary mb-0">15.3 GB</h6>
 				</div>
 				<div class="d-flex align-items-center mt-3">
 					<div class="fm-file-box bg-light-success text-success"><i class="bx bxs-file-doc"></i>
 					</div>
 					<div class="flex-grow-1 ms-2">
 						<h6 class="mb-0">Documents</h6>
-						<p class="mb-0 text-secondary">123 files</p>
 					</div>
-					<h6 class="text-primary mb-0">256 MB</h6>
 				</div>
 				<div class="d-flex align-items-center mt-3">
 					<div class="fm-file-box bg-light-danger text-danger"><i class="bx bx-video"></i>
 					</div>
 					<div class="flex-grow-1 ms-2">
 						<h6 class="mb-0">Media Files</h6>
-						<p class="mb-0 text-secondary">24 files</p>
 					</div>
-					<h6 class="text-primary mb-0">3.4 GB</h6>
 				</div>
 				<div class="d-flex align-items-center mt-3">
 					<div class="fm-file-box bg-light-warning text-warning"><i class="bx bx-image"></i>
 					</div>
 					<div class="flex-grow-1 ms-2">
 						<h6 class="mb-0">Other Files</h6>
-						<p class="mb-0 text-secondary">458 files</p>
 					</div>
-					<h6 class="text-primary mb-0">3 GB</h6>
 				</div>
 				<div class="d-flex align-items-center mt-3">
 					<div class="fm-file-box bg-light-info text-info"><i class="bx bx-image"></i>
 					</div>
 					<div class="flex-grow-1 ms-2">
 						<h6 class="mb-0">Unknown Files</h6>
-						<p class="mb-0 text-secondary">57 files</p>
 					</div>
-					<h6 class="text-primary mb-0">178 GB</h6>
 				</div>
 			</div>
 		</div>
@@ -155,11 +141,8 @@
 									</div>
 								</div>
 								<h5 class="mt-3 mb-0">Google Drive</h5>
-								<p class="mb-1 mt-4"><span>45.5 GB</span>  <span class="float-end">50 GB</span>
-								</p>
-								<div class="progress" style="height: 7px;">
-									<div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
+								
+							
 							</div>
 						</div>
 					</div>
@@ -173,11 +156,8 @@
 									</div>
 								</div>
 								<h5 class="mt-3 mb-0">Dropbox</h5>
-								<p class="mb-1 mt-4"><span>1,2 GB</span>  <span class="float-end">3 GB</span>
-								</p>
-								<div class="progress" style="height: 7px;">
-									<div class="progress-bar bg-danger" role="progressbar" style="width: 45%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
+								
+								
 							</div>
 						</div>
 					</div>
@@ -191,17 +171,12 @@
 									</div>
 								</div>
 								<h5 class="mt-3 mb-0">OneDrive</h5>
-								<p class="mb-1 mt-4"><span>2,5 GB</span>  <span class="float-end">3 GB</span>
-								</p>
-								<div class="progress" style="height: 7px;">
-									<div class="progress-bar bg-warning" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
+								
 							</div>
 						</div>
 					</div>
 				</div>
 				<!--end row-->
-				<h5>Folders</h5>
 				<div class="row mt-3">
 					<div class="col-12 col-lg-4">
 						<div class="card shadow-none border radius-15">
@@ -210,13 +185,10 @@
 									<div class="font-30 text-primary"><i class="bx bxs-folder"></i>
 									</div>
 									<div class="user-groups ms-auto">
-										<img src="https://bootdey.com/img/Content/avatar/avatar1.png" width="35" height="35" class="rounded-circle" alt="">
-										<img src="https://bootdey.com/img/Content/avatar/avatar2.png" width="35" height="35" class="rounded-circle" alt="">
-									</div>
+										</div>
 									<div class="user-plus">+</div>
 								</div>
 								<h6 class="mb-0 text-primary">Analytics</h6>
-								<small>15 files</small>
 							</div>
 						</div>
 					</div>
@@ -227,11 +199,9 @@
 									<div class="font-30 text-primary"><i class="bx bxs-folder"></i>
 									</div>
 									<div class="user-groups ms-auto">
-										<img src="https://bootdey.com/img/Content/avatar/avatar7.png" width="35" height="35" class="rounded-circle" alt="">
 									</div>
 								</div>
 								<h6 class="mb-0 text-primary">Assets</h6>
-								<small>345 files</small>
 							</div>
 						</div>
 					</div>
@@ -242,65 +212,21 @@
 									<div class="font-30 text-primary"><i class="bx bxs-folder"></i>
 									</div>
 									<div class="user-groups ms-auto">
-										<img src="https://bootdey.com/img/Content/avatar/avatar2.png" width="35" height="35" class="rounded-circle" alt="">
-										<img src="https://bootdey.com/img/Content/avatar/avatar3.png" width="35" height="35" class="rounded-circle" alt="">
 									</div>
 								</div>
 								<h6 class="mb-0 text-primary">Marketing</h6>
-								<small>143 files</small>
 							</div>
 						</div>
 					</div>
 				</div>
+				
 				<!--end row-->
 				<div class="d-flex align-items-center">
-					<div>
-						<h5 class="mb-0">Recent Files</h5>
-					</div>
-					<div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-outline-secondary">View all</a>
+					
+					<div class="ms-auto"><a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php" class="btn btn-sm btn-outline-secondary">View all</a>
 					</div>
 				</div>
-				<div class="table-responsive mt-3">
-					<table class="table table-striped table-hover table-sm mb-0">
-						<thead>
-							<tr>
-							<th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Size</th>
-							</tr>
-						</thead>
-						<tbody>
-                            <?php
-                                //lấy dữ liệu từ CSDL và để ra bảng (phần lặp lại)
-                                //bước 1:kết nối tời csdl(mysql)
-                                $conn = mysqli_connect('localhost','root','','files_management');
-                                if(!$conn){
-                                    die("Không thể kết nối,kiểm tra lại các tham số kết nối");
-                                }
-
-                                //bước 2 khai báo câu lệnh thực thi và thực hiện truy vấn
-                                $sql = "SELECT * FROM documents";
-                                $result = mysqli_query($conn,$sql);
-
-                                //bước 3 xử lý kết quả trả về
-                                if(mysqli_num_rows($result) > 0){
-                                    $i=1;
-                                    while($row = mysqli_fetch_assoc($result)){
-                            ?>
-                            
-                            <tr>
-                            <th scope="row"><?php echo $i; ?> </th>
-                            <td><?php echo $row['name']; ?> </td>
-                            <td><?php echo $row['size']; ?> </td>
-                            </tr>
-                            <?php
-                                $i++;
-                                }
-                            }
-                            ?>
-                        </tbody>
-					</table>
-				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -315,7 +241,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #3b5998;"
-        href="#!"
+        href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php"
         role="button"
         ><i class="fab fa-facebook-f"></i
       ></a>
@@ -324,7 +250,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #55acee;"
-        href="#!"
+        href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php"
         role="button"
         ><i class="fab fa-twitter"></i
       ></a>
@@ -333,7 +259,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #dd4b39;"
-        href="#!"
+        href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php"
         role="button"
         ><i class="fab fa-google"></i
       ></a>
@@ -342,7 +268,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #ac2bac;"
-        href="#!"
+        href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php"
         role="button"
         ><i class="fab fa-instagram"></i
       ></a>
@@ -351,7 +277,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #0082ca;"
-        href="#!"
+        href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php"
         role="button"
         ><i class="fab fa-linkedin-in"></i
       ></a>
@@ -359,7 +285,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #333333;"
-        href="#!"
+        href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php"
         role="button"
         ><i class="fab fa-github"></i
       ></a>
@@ -371,7 +297,7 @@
   <!-- Copyright -->
   <div class="text-center text-danger p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2020 Copyright:
-    <a class="text-danger" href="http://localhost:81/dhtl/index.php">TLU</a>
+    <a class="text-danger" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/login.php">TLU</a>
   </div>
   <!-- Copyright -->
 </footer>
