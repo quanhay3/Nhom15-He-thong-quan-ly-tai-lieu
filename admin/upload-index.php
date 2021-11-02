@@ -44,6 +44,9 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 
@@ -54,6 +57,7 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 		<div class="header">
 			<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load</span></p>			
 		</div>
+		<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php"><i style="color:black;padding:10px;" class="fas fa-home fa-2x"></i></a>
 		<form action="" method="POST" enctype="multipart/form-data" class="body">
 			<input type="file" name="file" id="upload" required>
 			<label for="upload">
