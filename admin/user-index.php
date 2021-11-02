@@ -31,9 +31,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Giới Thiệu</a>
-                        </li>
+                       
                         <li class="nav-item">
                         <a class="nav-link" href=""></a>
                         </li>
@@ -42,7 +40,7 @@
                             Thông tin
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/information-user.php">Thông tin cá nhân</a></li>
+                            <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/update-information.php">Thông tin cá nhân</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Thông tin tác giả</a></li>
                         </ul>
