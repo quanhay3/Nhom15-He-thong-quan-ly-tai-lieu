@@ -70,7 +70,7 @@
 					<div class="list-group list-group-flush"> <a href="javascript:;" class="list-group-item py-1"><i class="bx bx-folder me-2"></i><span>All Files</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-devices me-2"></i><span>My Devices</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-analyse me-2"></i><span>Recents</span></a>
-						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-plug me-2"></i><span>Important</span></a>
+						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/download-index.php" class="list-group-item py-1"><i class="fas fa-download"></i><span>          Download</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-trash-alt me-2"></i><span>Deleted Files</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-file me-2"></i>
                     <span>Documents</span></a>
