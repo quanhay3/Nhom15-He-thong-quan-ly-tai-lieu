@@ -50,7 +50,7 @@
               ?>
 
             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-            <p>Don't have an account? <a href="http://localhost:81/project/admin/register.php" class="link-info">Register here</a></p>
+            <p>Don't have an account? <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/register.php" class="link-info">Register here</a></p>
 
           </form>
 

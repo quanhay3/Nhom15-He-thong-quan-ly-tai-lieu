@@ -16,13 +16,13 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 				VALUES ('$file_name', '$file_size')";
 		$result = mysqli_query($conn, $sql);
 		if ($result) {
-			echo "<script>alert('Wow! File uploaded successfully.')</script>";
+			echo "<script>alert('Wow! Upload thành công.')</script>";
 			// Select id from database
 			$sql = "SELECT id FROM documents ORDER BY id DESC";
 			$result = mysqli_query($conn, $sql);
 			
 		} else {
-			echo "<script>alert('Woops! Something wong went.')</script>";
+			echo "<script>alert('Woops! Không upload được òi.')</script>";
 		}
 	}
 }
