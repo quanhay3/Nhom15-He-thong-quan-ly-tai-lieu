@@ -8,7 +8,9 @@
         $result = mysqli_query($conn,$sql);
         if(mysqli_num_rows($result) == 1){
             $_SESSION['mySession'] = $username;
+
             header("location:http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/admin-index.php");
+
         }else{
             $response = 'failed_password';
             header("location:admin-login.php?response=$response");
@@ -94,4 +96,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     -->
   </body>
+
 </html>
+
+
