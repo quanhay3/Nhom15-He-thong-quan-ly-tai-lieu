@@ -39,13 +39,12 @@
                         </li>
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Danh mục
+                            Thông tin
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/information-user.php">Thông tin cá nhân</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Thông tin tác giả</a></li>
                         </ul>
                         </li>
                         <li class="nav-item">
@@ -71,7 +70,7 @@
 					<div class="list-group list-group-flush"> <a href="javascript:;" class="list-group-item py-1"><i class="bx bx-folder me-2"></i><span>All Files</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-devices me-2"></i><span>My Devices</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-analyse me-2"></i><span>Recents</span></a>
-						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/download-index.php" class="list-group-item py-1"><i class="fas fa-download"></i><span>          Download</span></a>
+						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-plug me-2"></i><span>Important</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-trash-alt me-2"></i><span>Deleted Files</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-file me-2"></i>
                     <span>Documents</span></a>
@@ -264,8 +263,6 @@
 				<div class="d-flex align-items-center">
 					<div>
 						<h5 class="mb-0">Recent Files</h5>
-						
-
 					</div>
 					<div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-outline-secondary">View all</a>
 					</div>
@@ -278,7 +275,6 @@
                             <th scope="col">Name</th>
                             <th scope="col">Size</th>
 							</tr>
-							
 						</thead>
 						<tbody>
                             <?php
@@ -309,8 +305,6 @@
                                 }
                             }
                             ?>
-
-
                         </tbody>
 					</table>
 				</div>
