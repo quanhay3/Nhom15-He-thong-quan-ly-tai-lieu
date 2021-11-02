@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['mySession'])){
-    header('location:login.php');
+    header('location:index.php');
   }
 
 
@@ -17,11 +17,14 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <link href="css/Style.css" rel="stylesheet">
+
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body>
+<body>	
 <div class="row-nav-menu">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -58,13 +61,17 @@
                     </div>
                 </div>
             </nav> 
+
 <div class="container" style = "margin-top:30px">
 <div class="row">
     <div class="col-12 col-lg-3">
 		<div class="card">
 			<div class="card-body">
       		<a href="logout.php"> <button type="submit" name="Logout" class="mb-4 btn btn-danger">Đăng xuất</button> </a>
+				<div class="d-grid"> <a href="javascript:;" class="btn btn-primary ">Add File</a>
+
 				<div class="d-grid"> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/upload-index.php" class="btn btn-primary ">Add File</a>
+
 				</div>
 				<h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">
@@ -269,6 +276,137 @@
 					</div>
 				</div>
 				<div class="table-responsive mt-3">
+
+					<table class="table table-striped table-hover table-sm mb-0">
+						<thead>
+							<tr>
+								<th>Name <i class="bx bx-up-arrow-alt ms-2"></i>
+								</th>
+								<th>Members</th>
+								<th>Last Modified</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div class="d-flex align-items-center">
+										<div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
+										</div>
+										<div class="font-weight-bold text-danger">Competitor Analysis Template</div>
+									</div>
+								</td>
+								<td>Only you</td>
+								<td>Sep 3, 2019</td>
+								<td><i class="fa fa-ellipsis-h font-24"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="d-flex align-items-center">
+										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
+										</div>
+										<div class="font-weight-bold text-primary">How to Create a Case Study</div>
+									</div>
+								</td>
+								<td>3 members</td>
+								<td>Jun 12, 2019</td>
+								<td><i class="fa fa-ellipsis-h font-24"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="d-flex align-items-center">
+										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
+										</div>
+										<div class="font-weight-bold text-primary">Landing Page Structure</div>
+									</div>
+								</td>
+								<td>10 members</td>
+								<td>Jul 17, 2019</td>
+								<td><i class="fa fa-ellipsis-h font-24"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="d-flex align-items-center">
+										<div><i class="bx bxs-file-pdf me-2 font-24 text-danger"></i>
+										</div>
+										<div class="font-weight-bold text-danger">Meeting Report</div>
+									</div>
+								</td>
+								<td>5 members</td>
+								<td>Aug 28, 2019</td>
+								<td><i class="fa fa-ellipsis-h font-24"></i>
+								</td>
+							</tr>       
+							<tr>
+								<td>
+									<div class="d-flex align-items-center">
+										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
+										</div>
+										<div class="font-weight-bold text-primary">Project Documents</div>
+									</div>
+								</td>
+								<td>Only you</td>
+								<td>Aug 17, 2019</td>
+								<td><i class="fa fa-ellipsis-h font-24"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="d-flex align-items-center">
+										<div><i class="bx bxs-file-doc me-2 font-24 text-success"></i>
+										</div>
+										<div class="font-weight-bold text-success">Review Checklist Template</div>
+									</div>
+								</td>
+								<td>7 members</td>
+								<td>Sep 8, 2019</td>
+								<td><i class="fa fa-ellipsis-h font-24"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="d-flex align-items-center">
+										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
+										</div>
+										<div class="font-weight-bold text-primary">How to Create a Case Study</div>
+									</div>
+								</td>
+								<td>3 members</td>
+								<td>Jun 12, 2019</td>
+								<td><i class="fa fa-ellipsis-h font-24"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="d-flex align-items-center">
+										<div><i class="bx bxs-file me-2 font-24 text-primary"></i>
+										</div>
+										<div class="font-weight-bold text-primary">Landing Page Structure</div>
+									</div>
+								</td>
+								<td>10 members</td>
+								<td>Jul 17, 2019</td>
+								<td><i class="fa fa-ellipsis-h font-24"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="d-flex align-items-center">
+										<div><i class="bx bxs-file-doc me-2 font-24 text-success"></i>
+										</div>
+										<div class="font-weight-bold text-success">Review Checklist Template</div>
+									</div>
+								</td>
+								<td>7 members</td>
+								<td>Sep 8, 2019</td>
+								<td><i class="fa fa-ellipsis-h font-24"></i>
+								</td>
+							</tr>
+						</tbody>
+=======
 				<table class="table table-striped table-hover table-sm mb-0">
 						<thead>
 							<tr>
@@ -307,6 +445,7 @@
                             }
                             ?>
                         </tbody>
+>>>>>>> c40e470b8ae655122217b34fa58912da62f2a3e0
 					</table>
 				</div>
 			</div>
@@ -314,6 +453,8 @@
 	</div>
 </div>
 </div>
+<<<<<<< HEAD
+=======
 <footer class="bg-light text-center text-white">
   <!-- Grid container -->
   <div class="container p-4 pb-0">
@@ -386,6 +527,7 @@
   
 </div>
 <!-- End of .container --> 
+>>>>>>> c40e470b8ae655122217b34fa58912da62f2a3e0
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
