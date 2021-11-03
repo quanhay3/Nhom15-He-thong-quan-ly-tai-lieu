@@ -3,9 +3,6 @@
   if(!isset($_SESSION['mySession'])){
     header('location:login.php');
   }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
