@@ -1,12 +1,3 @@
-<?php
-  session_start();
-  if(!isset($_SESSION['mySession'])){
-    header('location:login.php');
-  }
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,22 +16,25 @@
 <div class="row-nav-menu">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php">Trang Chủ</a>
+                    <a class="navbar-brand" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/user-index.php">Trang Chủ</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        
+                       
                         <li class="nav-item">
                         <a class="nav-link" href=""></a>
                         </li>
                         <li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Thông tin
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/update-information.php">Thông tin cá nhân</a></li>
+
+                            <li><a class="dropdown-item" href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/add-information-user.php">Thông tin cá nhân</a></li>
+
+                            <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/information-user.php">Thông tin cá nhân</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Thông tin tác giả</a></li>
                         </ul>
@@ -80,9 +74,8 @@
 				<p class="mb-0 mt-2"><span class="text-secondary">Used</span><span class="float-end text-primary">Upgrade</span>
 				</p>
 				<div class="progress mt-3" style="height:7px;">
-					<div class="progress-bar" role="progressbar" style="width: 39%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-					
-				</div>
+				<div class="progress-bar" role="progressbar" style="width: 39%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
 				<div class="mt-3"></div>
 				<div class="d-flex align-items-center">
 					<div class="fm-file-box bg-light-primary text-primary"><i class="bx bx-folder me-2"></i>
@@ -253,39 +246,25 @@
 				<!--end row-->
 				<div class="d-flex align-items-center">
 					<div>
-						<h5 class="mb-0">Choose File To Download</h5>
-						
-
+						<h5 class="mb-0">Recent Files</h5>
 					</div>
 					<div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-outline-secondary">View all</a>
 					</div>
 				</div>
-				<div class="table-responsive mt-3">
-				<table class="table ">
-						<?php include 'process-download.php';?>
-						<thead>
-						<tr>
-						<th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Size</th>
-						<th scope="col">Download</th>
-						</tr>
-						</thead>
-						<tbody>
-						<?php foreach ($files as $file): ?>
-							<tr>
-							<td><?php echo $file['id']; ?></td>
-							<td><?php echo $file['name']; ?></td>
-							<td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
-							
-							<td><a href="upload-index.php?id=<?php echo $file['id'] ?>"><i class="fas fa-download"></i></a></td>
-							</tr>
-						<?php endforeach;?>
-
-						</tbody>
-</body>						
-				</table>
-				</div>
+                <script src="https://cdn.tiny.cloud/1/6hvq9yu1mmznyfdyioqnfqybzx1rvj3ajo4ayuyb9xo4a1cv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+                <textarea>
+                     Write here!
+                </textarea>
+                <script>
+                    tinymce.init({
+                    selector: 'textarea',
+                    plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+                    toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
+                    toolbar_mode: 'floating', 
+                    tinycomments_mode: 'embedded',
+                    tinycomments_author: 'Author name', 
+                    })
+                </script>
 			</div>
 		</div>
 	</div>
