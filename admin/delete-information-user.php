@@ -1,5 +1,4 @@
 <?php 
-
     //Include constants.php file here
     include('../config/connect.php');
 
