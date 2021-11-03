@@ -206,13 +206,14 @@ $(document).ready(function(){
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Usename</th>						
-                        <th>Email</th>
-                        <th>Password</th>
+                        <th>Name</th>						
+                        <th>Phone</th>
+                        <th>Documents Upload</th>
+                        <th>Upload date</th>
                     </tr>
                 </thead>
                 <tbody>
-                            <?php
+                <?php
                                 //lấy dữ liệu từ CSDL và để ra bảng (phần lặp lại)
                                 //bước 1:kết nối tời csdl(mysql)
                                 $conn = mysqli_connect('localhost','root','','files_management');
@@ -221,7 +222,7 @@ $(document).ready(function(){
                                 }
 
                                 //bước 2 khai báo câu lệnh thực thi và thực hiện truy vấn
-                                $sql = "SELECT * FROM user";
+                                $sql = "SELECT * FROM information_user";
                                 $result = mysqli_query($conn,$sql);
 
                                 //bước 3 xử lý kết quả trả về
@@ -232,9 +233,10 @@ $(document).ready(function(){
                             
                             <tr>
                             <th scope="row"><?php echo $i; ?> </th>
-                            <td><?php echo $row['username']; ?> </td>
-                            <td><?php echo $row['email']; ?> </td>
-                            <td><?php echo $row['password']; ?> </td>
+                            <td><?php echo $row['name']; ?> </td>
+                            <td><?php echo $row['phone']; ?> </td>
+                            <td><?php echo $row['documents_upload']; ?> </td>
+                            <td><?php echo $row['upload_date']; ?> </td>
                             <td><a href="edit-user.php?id=<?php echo $row['id']; ?>"><i class="fas fa-edit"></i></a></td>
                             <td><a href="delete-user.php?id=<?php echo $row['id']; ?>"><i class="fas fa-trash"></i></a></td>
                             </tr>
@@ -242,7 +244,7 @@ $(document).ready(function(){
                                 $i++;
                                 }
                             }
-                           ?>
+                            ?>
                 </tbody>                   
             </table>
         </div>

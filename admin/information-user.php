@@ -87,7 +87,6 @@
                             <th scope="row"><?php echo $i; ?> </th>
                             <td><?php echo $row['name']; ?> </td>
                             <td><?php echo $row['phone']; ?> </td>
-                            <td><?php echo $row['email']; ?> </td>
                             <td><?php echo $row['documents_upload']; ?> </td>
                             <td><?php echo $row['upload_date']; ?> </td>
                             </tr>
