@@ -237,8 +237,8 @@ $(document).ready(function(){
                             <td><?php echo $row['phone']; ?> </td>
                             <td><?php echo $row['documents_upload']; ?> </td>
                             <td><?php echo $row['upload_date']; ?> </td>
-                            <td><a href="edit-user.php?id=<?php echo $row['id']; ?>"><i class="fas fa-edit"></i></a></td>
-                            <td><a href="delete-user.php?id=<?php echo $row['id']; ?>"><i class="fas fa-trash"></i></a></td>
+                            <td><a href="edit-information-user.php?id=<?php echo $row['id']; ?>"><i class="fas fa-edit"></i></a></td>
+                            <td><a href="delete-information-user.php?id=<?php echo $row['id']; ?>"><i class="fas fa-trash"></i></a></td>
                             </tr>
                             <?php
                                 $i++;
