@@ -1,12 +1,3 @@
-<?php
-  session_start();
-  if(!isset($_SESSION['mySession'])){
-    header('location:login.php');
-  }
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +66,8 @@
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-analyse me-2"></i><span>Recents</span></a>
 						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/download-index.php" class="list-group-item py-1"><i class="fas fa-download"></i><span>          Download</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-trash-alt me-2"></i><span>Deleted Files</span></a>
-						<a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/edit-export.php" class="list-group-item py-1"><i class="bx bx-file me-2"></i><span>Documents</span></a>
+						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-file me-2"></i>
+                    <span>Documents</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-image me-2"></i><span>Images</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-video me-2"></i><span>Videos</span></a>
 						<a href="javascript:;" class="list-group-item py-1"><i class="bx bx-music me-2"></i><span>Audio</span></a>
@@ -269,47 +261,20 @@
 					<div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-outline-secondary">View all</a>
 					</div>
 				</div>
-				<div class="table-responsive mt-3">
-				<table class="table table-striped table-hover table-sm mb-0">
-						<thead>
-							<tr>
-							<th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Size</th>
-							</tr>
-						</thead>
-						<tbody>
-                            <?php
-                                //lấy dữ liệu từ CSDL và để ra bảng (phần lặp lại)
-                                //bước 1:kết nối tời csdl(mysql)
-                                $conn = mysqli_connect('localhost','root','','files_management');
-                                if(!$conn){
-                                    die("Không thể kết nối,kiểm tra lại các tham số kết nối");
-                                }
-
-                                //bước 2 khai báo câu lệnh thực thi và thực hiện truy vấn
-                                $sql = "SELECT * FROM documents";
-                                $result = mysqli_query($conn,$sql);
-
-                                //bước 3 xử lý kết quả trả về
-                                if(mysqli_num_rows($result) > 0){
-                                    $i=1;
-                                    while($row = mysqli_fetch_assoc($result)){
-                            ?>
-                            
-                            <tr>
-                            <th scope="row"><?php echo $i; ?> </th>
-                            <td><?php echo $row['name']; ?> </td>
-                            <td><?php echo $row['size']; ?> </td>
-                            </tr>
-                            <?php
-                                $i++;
-                                }
-                            }
-                            ?>
-                        </tbody>
-					</table>
-				</div>
+                <script src="https://cdn.tiny.cloud/1/6hvq9yu1mmznyfdyioqnfqybzx1rvj3ajo4ayuyb9xo4a1cv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+                <textarea>
+                     Write here!
+                </textarea>
+                <script>
+                    tinymce.init({
+                    selector: 'textarea',
+                    plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+                    toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
+                    toolbar_mode: 'floating', 
+                    tinycomments_mode: 'embedded',
+                    tinycomments_author: 'Author name', 
+                    })
+                </script>
 			</div>
 		</div>
 	</div>
