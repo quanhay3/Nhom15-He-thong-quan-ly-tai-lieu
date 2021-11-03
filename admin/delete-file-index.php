@@ -260,7 +260,7 @@
 				<!--end row-->
 				<div class="d-flex align-items-center">
 					<div>
-						<h5 class="mb-0">Choose File To Download</h5>
+						<h5 class="mb-0">Choose File To Delete</h5>
 						
 
 					</div>
@@ -275,7 +275,7 @@
 						<th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Size</th>
-						<th scope="col">Download</th>
+						<th scope="col">Delete</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -285,7 +285,7 @@
 							<td><?php echo $file['name']; ?></td>
 							<td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
 							
-							<td><a href="upload-index.php?id=<?php echo $file['id'] ?>"><i class="fas fa-download"></i></a></td>
+							<td><a href="process-delete-file.php?id=<?php echo $file['id'] ?>"><i class="fas fa-trash-alt"></i></i></a></td>
 							</tr>
 						<?php endforeach;?>
 
