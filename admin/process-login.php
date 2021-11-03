@@ -12,9 +12,8 @@
        $pass_saved = $row['password'];
 
        if(password_verify($password, $pass_saved)){
-           $_SESSION['login_ok']=$row;
-           header("Location:user-index.php");
-
+           $_SESSION['mySession']=$username;
+           header("Location:user-index.php");   
        }else{
         $response = 'failed_pass';
         header("Location: login.php?response=$response");
