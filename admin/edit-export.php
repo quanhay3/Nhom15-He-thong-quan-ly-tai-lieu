@@ -16,7 +16,7 @@
 <div class="row-nav-menu">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/user-index.php">Trang Chủ</a>
+                    <a class="navbar-brand" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php">Trang Chủ</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
@@ -239,9 +239,7 @@
 				</div>
 				<!--end row-->
 				<div class="d-flex align-items-center">
-					<div>
-						<h5 class="mb-0">Recent Files</h5>
-					</div>
+					
 					<div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-outline-secondary">View all</a>
 					</div>
 				</div>
