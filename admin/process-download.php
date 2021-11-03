@@ -35,5 +35,4 @@ if (isset($_GET['id'])) {
         //mysqli_query($conn, $updateQuery);
         exit;
     }
-
 }
