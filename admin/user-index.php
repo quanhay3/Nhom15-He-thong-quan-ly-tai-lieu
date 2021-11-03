@@ -136,13 +136,7 @@
 	<div class="col-12 col-lg-9">
 		<div class="card">
 			<div class="card-body">
-				<div class="fm-search">
-					<div class="mb-0">
-						<div class="input-group input-group-lg">	<span class="input-group-text bg-transparent"><i class="fa fa-search"></i></span>
-							<input type="text" class="form-control" placeholder="Search the files">
-						</div>
-					</div>
-				</div>
+				
 				<div class="row mt-3">
 					<div class="col-12 col-lg-4">
 						<div class="card shadow-none border radius-15">
