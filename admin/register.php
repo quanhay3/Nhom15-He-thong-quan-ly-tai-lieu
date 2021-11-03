@@ -46,7 +46,7 @@
                 <?php
                  if(isset($_GET['response'])){
                      if($_GET['response']=='successfully'){
-                         echo "<p class='text-danger'>Đăng ký thành công, vui lòng vào email nhận mã để kích hoạt tài khoản</p>";
+                         echo "<p class='text-danger'>Đăng ký thành công</p>";
                      }
                      if($_GET['response']=='existed'){
                         echo "<p class='text-danger'>Email tồn tại</p>";
