@@ -1,43 +1,4 @@
-<?php
-    $conn = mysqli_connect('localhost', 'root', '', 'files_management');
-    if (!$conn) {
-        die("Kết nối thất bại  .Kiểm tra lại các tham số    khai báo kết nối");
-    }
-  
-  
-    if(isset($_GET['id'])){
-        if(isset($_POST['btnSaveprofile'])){
-            $id = $_GET['id'];
-            $first_name      = $_POST['first_name'];
-            $last_name       = $_POST['last_name'];
-            $phone           = $_POST['number'];
-            $email           = $_POST['email'];
-            $location        = $_POST['location'];
 
-           
-        
-        $sql = "UPDATE `information_user` SET  first_name='$first_name',last_name = '$last_name', phone='$phone', email='$email',location='$location' WHERE id='$id'";   
-        $query = mysqli_query($conn,$sql);    
-        
-        }
-    }
-    // require("../config/connect.php");
-
-   
-
-
-//     echo $sql."<br>";
-
-//     if(mysqli_query($conn,$sql)==TRUE){
-//       $value='ok';
-//       header("Location:manage-user.php");
-//     }else{
-//       echo 'sua tb';
-//     }
-//     mysqli_close($conn);
-//   }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,15 +52,16 @@ body {
 }
 </style>
 <body>
- <?php 
-     $id2 = $_GET['id'];
-     echo $id2;
-     die();
-     $sql2 = "SELECT * FROM information_user WHERE id =  '$id2'";
-     $query2 = mysqli_query($conn , $sql2);
-     
-     $row = mysqli_fetch_assoc($query2);
- ?>
+<?php 
+    $conn = mysqli_connect('localhost','root','','files_management');
+    if(!$conn){
+        die("Không thể kết nối,kiểm tra lại các tham số kết nối");
+    }
+    $id_us = $_GET['id_us'];
+    $query_1 = mysqli_query($conn , "SELECT * FROM information_user WHERE id_us ='$id_us'");
+    $row = mysqli_fetch_assoc($query_1);
+        
+?>
 <div class="container rounded bg-white mt-5">
     <div class="row">
         <div class="col-md-4 border-right">
@@ -120,13 +82,38 @@ body {
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" name ="email" placeholder="Email" value="<?php echo $row['email']; ?>"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" name = "number" value="<?php echo $row['phone']; ?>" placeholder="Phone number"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" name = "phone" value="<?php echo $row['phone']; ?>" placeholder="Phone number"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" name = "location" placeholder="location" value="<?php echo $row['location']; ?>"></div>
                 </div>
                 
                 <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name = "btnSaveprofile" type="submit">Save Profile</button></div>
+                <?php
+                            if (isset($_POST['btnSaveprofile'])) {
+                                $first_name     = $_POST['first_name'];
+                                $last_name    = $_POST['last_name'];
+                                $phone    = $_POST['phone'];
+                                $email     = $_POST['email'];
+                                $location  = $_POST['location'];
+                                // Create connection
+                                $conn = new mysqli("localhost", "root", "", "files_management");
+                                // Check connection
+                                if ($conn->connect_error) {
+                                    die("Lỗi kết nối " . $conn->connect_error);
+                                }
+
+                                $sql = "UPDATE information_user SET first_name='$first_name',last_name = '$last_name', phone='$phone', email='$email' ,location='$location' WHERE id_us='$id_us'";
+
+                                if ($conn->query($sql) === TRUE) {
+                                    echo "<div class='text-danger'>Sửa thành công</div>";
+                                    
+                                } else {
+                                    echo "Sửa không thành công " . $conn->error;
+                                }
+                                $conn->close();
+                            }
+                            ?>
                 </form>
             </div>
         </div>
