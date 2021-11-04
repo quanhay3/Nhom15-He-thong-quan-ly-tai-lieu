@@ -52,17 +52,18 @@ body {
 }
 </style>
 <body>
-<?php 
-    $conn = mysqli_connect('localhost','root','','files_management');
-    if(!$conn){
-        die("Không thể kết nối,kiểm tra lại các tham số kết nối");
-    }
-    $id_us = $_GET['id_us'];
-    $query_1 = mysqli_query($conn , "SELECT * FROM information_user WHERE id_us ='$id_us'");
-    $row = mysqli_fetch_assoc($query_1);
-        
-?>
+<?php
+        // Kết nối Database
+        $conn = mysqli_connect('localhost', 'root', '', 'files_management');
+        if (!$conn) {
+            die("Kết nối thất bại  .Kiểm tra lại các tham số    khai báo kết nối");
+        }
+        $id_us = $_GET['id_us'];
+        $query = mysqli_query($conn, "SELECT * from `information_user` where id_us='$id_us'");
+        $row = mysqli_fetch_assoc($query);
+    ?>
 <div class="container rounded bg-white mt-5">
+
     <div class="row">
         <div class="col-md-4 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
@@ -75,49 +76,25 @@ body {
                     </div>
                     <h6 class="text-right">Edit Profile</h6>
                 </div>
-                <form  method="post" action="edit-user.php">
+                <form  method="post" action="process-edit.php">
                 <div class="row mt-2">
-                    <div class="col-md-6"><input type="text" class="form-control" name="first_name" placeholder="first name" value="<?php echo $row['first_name']; ?>"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" name = "last_name" value="<?php echo $row['last_name']; ?>" placeholder="last_name"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="first_name" name="first_name" placeholder="first name" value="<?php echo $row['first_name']; ?>"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="last_name" name = "last_name" value="<?php echo $row['last_name']; ?>" placeholder="last_name"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" name ="email" placeholder="Email" value="<?php echo $row['email']; ?>"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" name = "phone" value="<?php echo $row['phone']; ?>" placeholder="Phone number"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="email" name ="email" placeholder="Email" value="<?php echo $row['email']; ?>"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="phone" name = "phone" value="<?php echo $row['phone']; ?>" placeholder="Phone number"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" name = "location" placeholder="location" value="<?php echo $row['location']; ?>"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="location" name = "location" placeholder="location" value="<?php echo $row['location']; ?>"></div>
                 </div>
                 
-                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name = "btnSaveprofile" type="submit">Save Profile</button></div>
-                <?php
-                            if (isset($_POST['btnSaveprofile'])) {
-                                $first_name     = $_POST['first_name'];
-                                $last_name    = $_POST['last_name'];
-                                $phone    = $_POST['phone'];
-                                $email     = $_POST['email'];
-                                $location  = $_POST['location'];
-                                // Create connection
-                                $conn = new mysqli("localhost", "root", "", "files_management");
-                                // Check connection
-                                if ($conn->connect_error) {
-                                    die("Lỗi kết nối " . $conn->connect_error);
-                                }
-
-                                $sql = "UPDATE information_user SET first_name='$first_name',last_name = '$last_name', phone='$phone', email='$email' ,location='$location' WHERE id_us='$id_us'";
-
-                                if ($conn->query($sql) === TRUE) {
-                                    echo "<div class='text-danger'>Sửa thành công</div>";
-                                    
-                                } else {
-                                    echo "Sửa không thành công " . $conn->error;
-                                }
-                                $conn->close();
-                            }
-                            ?>
+                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name = "btnSave" type="submit" value="save">Save Profile</button></div>
                 </form>
             </div>
         </div>
     </div>
+
 </div>
 </body>
 </html>
