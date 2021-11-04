@@ -38,8 +38,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/update-information.php">Thông tin cá nhân</a></li>
-							<li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/information-user.php">Thông tin cá nhân</a></li>
-
 							<li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Thông tin tác giả</a></li>
                         </ul>
@@ -55,6 +53,16 @@
                 </div>
             </nav> 
 <div class="container" style = "margin-top:30px">
+<?php
+if(isset($_GET['response'])){
+                        if($_GET['response']=='successfully'){
+                            echo "<script>alert('Cập Nhật thành công.')</script>";
+                        }
+                        if($_GET['response']=='existed'){
+                            echo "<script>alert('Cập Nhật thất bại.')</script>";
+                        }
+					}
+					?>
 <div class="row">
     <div class="col-12 col-lg-3">
 		<div class="card">

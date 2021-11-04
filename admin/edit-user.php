@@ -1,29 +1,4 @@
-<?php
-  if(isset($_POST['btnSaveprofile'])){
-    
-    $first_name      = $_POST['first_name'];
-    $last_name    = $_POST['last_name'];
-    $phone   = $_POST['phone'];
-    $email    = $_POST['email'];
-    $location     = $_POST['location'];
-    
 
-    require("../config/connect.php");
-
-    $sql = "UPDATE `information_user` SET  first_name='$first_name',last_name = '$last_name', phone='$phone', email='$email',location='$location' WHERE id='$id'";
-
-
-    echo $sql."<br>";
-
-    if(mysqli_query($conn,$sql)==TRUE){
-      $value='ok';
-      header("Location:manage-user.php?response=$value");
-    }else{
-      echo 'sua tb';
-    }
-    mysqli_close($conn);
-  }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,19 +52,18 @@ body {
 }
 </style>
 <body>
-    <?php
-        
+<?php
         // Kết nối Database
         $conn = mysqli_connect('localhost', 'root', '', 'files_management');
         if (!$conn) {
             die("Kết nối thất bại  .Kiểm tra lại các tham số    khai báo kết nối");
         }
-        $id = $_GET['id'];
-        $query = mysqli_query($conn, "select * from `information_user` where id='$id'");
+        $id_us = $_GET['id_us'];
+        $query = mysqli_query($conn, "SELECT * from `information_user` where id_us='$id_us'");
         $row = mysqli_fetch_assoc($query);
     ?>
-    
 <div class="container rounded bg-white mt-5">
+
     <div class="row">
         <div class="col-md-4 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
@@ -102,22 +76,25 @@ body {
                     </div>
                     <h6 class="text-right">Edit Profile</h6>
                 </div>
+                <form  method="post" action="process-edit.php">
                 <div class="row mt-2">
-                    <div class="col-md-6"><input type="text" class="form-control" name="first_name" placeholder="first name" value="<?php echo $row['first_name']; ?>"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" name = "last_name" value="<?php echo $row['last_name']; ?>" placeholder="last_name"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="first_name" name="first_name" placeholder="first name" value="<?php echo $row['first_name']; ?>"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="last_name" name = "last_name" value="<?php echo $row['last_name']; ?>" placeholder="last_name"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" name ="email" placeholder="Email" value="<?php echo $row['email']; ?>"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" name = "number" value="<?php echo $row['phone']; ?>" placeholder="Phone number"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="email" name ="email" placeholder="Email" value="<?php echo $row['email']; ?>"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="phone" name = "phone" value="<?php echo $row['phone']; ?>" placeholder="Phone number"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" name = "location" placeholder="location" value="<?php echo $row['location']; ?>"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" id="location" name = "location" placeholder="location" value="<?php echo $row['location']; ?>"></div>
                 </div>
                 
-                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name = "btnSaveprofile"type="button">Save Profile</button></div>
+                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name = "btnSave" type="submit" value="save">Save Profile</button></div>
+                </form>
             </div>
         </div>
     </div>
+
 </div>
 </body>
 </html>
