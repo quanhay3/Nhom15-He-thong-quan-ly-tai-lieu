@@ -1,28 +1,42 @@
 <?php
-  if(isset($_POST['btnSaveprofile'])){
-    
-    $first_name      = $_POST['first_name'];
-    $last_name    = $_POST['last_name'];
-    $phone   = $_POST['phone'];
-    $email    = $_POST['email'];
-    $location     = $_POST['location'];
-    
-
-    require("../config/connect.php");
-
-    $sql = "UPDATE `information_user` SET  first_name='$first_name',last_name = '$last_name', phone='$phone', email='$email',location='$location' WHERE id='$id'";
-
-
-    echo $sql."<br>";
-
-    if(mysqli_query($conn,$sql)==TRUE){
-      $value='ok';
-      header("Location:manage-user.php?response=$value");
-    }else{
-      echo 'sua tb';
+    $conn = mysqli_connect('localhost', 'root', '', 'files_management');
+    if (!$conn) {
+        die("Kết nối thất bại  .Kiểm tra lại các tham số    khai báo kết nối");
     }
-    mysqli_close($conn);
-  }
+  
+  
+    if(isset($_GET['id'])){
+        if(isset($_POST['btnSaveprofile'])){
+            $id = $_GET['id'];
+            $first_name      = $_POST['first_name'];
+            $last_name       = $_POST['last_name'];
+            $phone           = $_POST['number'];
+            $email           = $_POST['email'];
+            $location        = $_POST['location'];
+
+           
+        
+        $sql = "UPDATE `information_user` SET  first_name='$first_name',last_name = '$last_name', phone='$phone', email='$email',location='$location' WHERE id='$id'";   
+        $query = mysqli_query($conn,$sql);    
+        
+        }
+    }
+    // require("../config/connect.php");
+
+   
+
+
+//     echo $sql."<br>";
+
+//     if(mysqli_query($conn,$sql)==TRUE){
+//       $value='ok';
+//       header("Location:manage-user.php");
+//     }else{
+//       echo 'sua tb';
+//     }
+//     mysqli_close($conn);
+//   }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,18 +91,15 @@ body {
 }
 </style>
 <body>
-    <?php
-        
-        // Kết nối Database
-        $conn = mysqli_connect('localhost', 'root', '', 'files_management');
-        if (!$conn) {
-            die("Kết nối thất bại  .Kiểm tra lại các tham số    khai báo kết nối");
-        }
-        $id = $_GET['id'];
-        $query = mysqli_query($conn, "select * from `information_user` where id='$id'");
-        $row = mysqli_fetch_assoc($query);
-    ?>
-    
+ <?php 
+     $id2 = $_GET['id'];
+     echo $id2;
+     die();
+     $sql2 = "SELECT * FROM information_user WHERE id =  '$id2'";
+     $query2 = mysqli_query($conn , $sql2);
+     
+     $row = mysqli_fetch_assoc($query2);
+ ?>
 <div class="container rounded bg-white mt-5">
     <div class="row">
         <div class="col-md-4 border-right">
@@ -102,6 +113,7 @@ body {
                     </div>
                     <h6 class="text-right">Edit Profile</h6>
                 </div>
+                <form  method="post" action="edit-user.php">
                 <div class="row mt-2">
                     <div class="col-md-6"><input type="text" class="form-control" name="first_name" placeholder="first name" value="<?php echo $row['first_name']; ?>"></div>
                     <div class="col-md-6"><input type="text" class="form-control" name = "last_name" value="<?php echo $row['last_name']; ?>" placeholder="last_name"></div>
@@ -114,7 +126,8 @@ body {
                     <div class="col-md-6"><input type="text" class="form-control" name = "location" placeholder="location" value="<?php echo $row['location']; ?>"></div>
                 </div>
                 
-                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name = "btnSaveprofile"type="button">Save Profile</button></div>
+                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" name = "btnSaveprofile" type="submit">Save Profile</button></div>
+                </form>
             </div>
         </div>
     </div>
