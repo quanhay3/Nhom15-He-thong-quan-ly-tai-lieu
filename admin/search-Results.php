@@ -50,7 +50,7 @@
                         <li class="nav-item">
                         </li>
                     </ul>
-                    <form method="post" action="search.php">
+                    <form method="post" action="search-Results.php">
                     <input type="text" name="search"/>
                     <input type="submit" name="submit" value="Search">
                     </form>
@@ -255,7 +255,7 @@
 						
 						<tbody>
                             <?php
-                                    include ('conn.php');
+                                    include ('../config/connect.php');
                                     $search=$_POST['search'];
 
                                     //Lệnh sql

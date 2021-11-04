@@ -42,9 +42,9 @@
                         <li class="nav-item">
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form method="post" action="search-Results.php">
+                    <input type="text" name="search"/>
+                    <input type="submit" name="submit" value="Search">
                     </form>
                     </div>
                 </div>
