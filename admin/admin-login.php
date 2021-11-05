@@ -9,7 +9,7 @@
         if(mysqli_num_rows($result) == 1){
             $_SESSION['mySession'] = $username;
 
-            header("location:http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/admin-index.php");
+            header("location:http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/manage-user.php");
 
         }else{
             $response = 'failed_password';

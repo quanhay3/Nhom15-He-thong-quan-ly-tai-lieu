@@ -13,7 +13,7 @@
         $value='xoa';
         header("Location:manage-user.php?response=$value");
     }else{
-        echo 'xoa  tb';
+        echo 'Error.';
     }
     mysqli_close($conn);
 

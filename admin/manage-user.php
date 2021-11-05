@@ -203,12 +203,28 @@ $(document).ready(function(){
                 </div>
             </div>
             <table class="table table-striped table-hover">
+            <?php
+                    if(isset($_GET['response'])){
+                        
+                        if($_GET['response']=='ok'){
+                            echo "<script>alert('Sửa thành công.')</script>";
+                        }
+                        if($_GET['response']=='xoa'){
+                            echo "<script>alert('Xóa thành công.')</script>";
+                        }
+                        
+                    }
+                  ?>
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Usename</th>						
+                        <th>First name</th>						
+                        <th>Last name</th>
+                        <th>Phone</th>
                         <th>Email</th>
-                        <th>Password</th>
+                        <th>Address</th>
+                        <th>Edit user</th>
+                        <th>Delete user</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -221,7 +237,7 @@ $(document).ready(function(){
                                 }
 
                                 //bước 2 khai báo câu lệnh thực thi và thực hiện truy vấn
-                                $sql = "SELECT * FROM user";
+                                $sql = "SELECT * FROM information_user";
                                 $result = mysqli_query($conn,$sql);
 
                                 //bước 3 xử lý kết quả trả về
@@ -232,9 +248,11 @@ $(document).ready(function(){
                             
                             <tr>
                             <th scope="row"><?php echo $i; ?> </th>
-                            <td><?php echo $row['username']; ?> </td>
+                            <td><?php echo $row['first_name']; ?> </td>
+                            <td><?php echo $row['last_name']; ?> </td>
+                            <td><?php echo $row['phone']; ?> </td>
                             <td><?php echo $row['email']; ?> </td>
-                            <td><?php echo $row['password']; ?> </td>
+                            <td><?php echo $row['location']; ?> </td>
                             <td><a href="edit-user.php?id=<?php echo $row['id']; ?>"><i class="fas fa-edit"></i></a></td>
                             <td><a href="delete-user.php?id=<?php echo $row['id']; ?>"><i class="fas fa-trash"></i></a></td>
                             </tr>

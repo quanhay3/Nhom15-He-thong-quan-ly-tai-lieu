@@ -19,7 +19,7 @@
       $value='ok';
       header("Location:manage-user.php?response=$value");
     }else{
-      echo 'sua tb';
+      echo 'Error.';
     }
     mysqli_close($conn);
   }
