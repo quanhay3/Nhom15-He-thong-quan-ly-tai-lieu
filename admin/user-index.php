@@ -43,9 +43,9 @@
                         <li class="nav-item">
                         </li>
                     </ul>
-                    <form method="post" action="search-Results.php">
-                    <input type="text" name="search"/>
-                    <input type="submit" name="submit" value="Search">
+                    <form action="search-Results.php".php" method="get">
+                    Search: <input type="text" name="search" />
+                    <input type="submit" name="ok" value="search" />
                     </form>
                     </div>
                 </div>
