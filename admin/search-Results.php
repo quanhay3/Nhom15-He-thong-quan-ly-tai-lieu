@@ -273,6 +273,7 @@
                                 <table cellpadding="15">
                                 HERE;
                                             //loop through results and get variables
+									
                                     while ($row=mysqli_fetch_array($result)){
                                         $id=$row['id'];
                                         $name=$row['name'];
@@ -281,12 +282,7 @@
                                         print <<<HERE
                                             <tr>
                                                     <td><br />ID: $id<br /><label>                       </label><strong>$name</strong><label>                      </label><br />Size: $size<br />
-                                                    <td>
-                                                    <form method="post" action="process-download.php" >
-                                                    <input type="hidden" name="sel_record" value="$id">
-                                                    <input type="submit" name="download" value="Download">
-                                                    </form>
-                                                    </td>
+                                                    
                                                     
                                                     
                                 HERE;        
