@@ -1,12 +1,4 @@
-<?php
-  session_start();
-  if(!isset($_SESSION['mySession'])){
-    header('location:login.php');
-  }
 
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,9 +42,9 @@
                         <li class="nav-item">
                         </li>
                     </ul>
-                    <form method="post" action="search-Results.php">
-                    <input type="text" name="search"/>
-                    <input type="submit" name="submit" value="Search">
+                    <form action="search-Results.php" method="get">
+                    Search: <input type="text" name="search" />
+                    <input type="submit" name="ok" value="search" />
                     </form>
                     </div>
                 </div>
@@ -255,45 +247,61 @@
 						<tbody>
                             <?php
                                     include ('../config/connect.php');
-                                    $search=$_POST['search'];
-
-                                    //Lệnh sql
-                                    $sql="SELECT * from documents
-                                    where name like '%$search%'";
-
-                                    //Chạy lệnh
-                                    if($result=mysqli_query($conn, $sql)){
-                                            //Tìm kết quả 
-                                $count = mysqli_num_rows($result);
-
-                                $pageTitle="Search Results";
-                                print <<<HERE
-                                <h2>Search Results</h2>
-                                <h3>$count results found for "$search"</h3>
-                                <table cellpadding="15">
-                                HERE;
-                                            //loop through results and get variables
-									
-                                    while ($row=mysqli_fetch_array($result)){
-                                        $id=$row['id'];
-                                        $name=$row['name'];
-                                        $size=$row['size'];
-
-                                        print <<<HERE
-                                            <tr>
-                                                    <td><br />ID: $id<br /><label>                       </label><strong>$name</strong><label>                      </label><br />Size: $size<br />
-                                                    
-                                                    
-                                                    
-                                HERE;        
+                                   // include ('process-download.php');
+                                    // Nếu người dùng submit form thì thực hiện
+                                    if (isset($_REQUEST['ok'])) 
+                                    {
+                                        // Gán hàm addslashes để chống sql injection
+                                        $search = addslashes($_GET['search']);
+                            
+                                        // Nếu $search rỗng thì báo lỗi, tức là người dùng chưa nhập liệu mà đã nhấn submit.
+                                        if (empty($search)) {
+                                            echo "Search";
+                                        } 
+                                        else
+                                        {
+                                            // Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
+                                            $sql = "SELECT * from documents where name like '%$search%'";
+                            
+                                            // Kết nối sql
+                                            //mysql_connect("localhost", "root", "vertrigo", "basic");
+                            
+                                            // Thực thi câu truy vấn
+                                            $result = mysqli_query($conn,$sql);
+                            
+                                            // Đếm số đong trả về trong sql.
+                                            $num = mysqli_num_rows($result);
+                            
+                                            // Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
+                                            if ($num > 0 && $search != "") 
+                                            {
+                                                // Dùng $num để đếm số dòng trả về.
+                                                echo "$num results for <b>$search</b>";
+                            
+                                                // Vòng lặp while & mysql_fetch_assoc dùng để lấy toàn bộ dữ liệu có trong table và trả về dữ liệu ở dạng array.
+                                               // echo '<table border="1" cellspacing="0" cellpadding="10">';
+                                                
+                                               while ($row = mysqli_fetch_assoc($result)) {
+                                                   
+                                                   
+                                                    echo '<tr>';
+                                                        echo "<td>{$row['id']}</td>";
+                                                        echo "<td>{$row['name']}</td>";
+                                                        echo "<td>{$row['size']}</td>";
+                                                        
+                                                    echo '</tr>';
+                                                }
+                                                echo '</table>';
+                                            } 
+                                            else {
+                                                echo "No results!";
+                                            }
+                                            
+                                        }
                                     }
-
-                                }else{
-                                        echo "Error";
-                                }
-                                    print "</tr></table>";
-                            ?>
-                        </tbody>
+                                    ?>  
+                                    
+                                     </tbody>
 					</table>
 				</div>
 			</div>
