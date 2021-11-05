@@ -256,17 +256,12 @@
                             
                                         // Nếu $search rỗng thì báo lỗi, tức là người dùng chưa nhập liệu mà đã nhấn submit.
                                         if (empty($search)) {
-                                            echo "Search";
+                                            echo "Nothing to search";
                                         } 
                                         else
                                         {
-                                            // Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
                                             $sql = "SELECT * from documents where name like '%$search%'";
-                            
-                                            // Kết nối sql
-                                            //mysql_connect("localhost", "root", "vertrigo", "basic");
-                            
-                                            // Thực thi câu truy vấn
+                                                                                              
                                             $result = mysqli_query($conn,$sql);
                             
                                             // Đếm số đong trả về trong sql.
@@ -275,19 +270,28 @@
                                             // Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
                                             if ($num > 0 && $search != "") 
                                             {
-                                                // Dùng $num để đếm số dòng trả về.
+                                                // Đếm số dòng trả về.
                                                 echo "$num results for <b>$search</b>";
                             
-                                                // Vòng lặp while & mysql_fetch_assoc dùng để lấy toàn bộ dữ liệu có trong table và trả về dữ liệu ở dạng array.
-                                               // echo '<table border="1" cellspacing="0" cellpadding="10">';
-                                                
+                                                // Vòng lặp while & mysql_fetch_assoc dùng để lấy toàn bộ dữ liệu có trong table và trả về dữ liệu ở dạng array.                                                
                                                while ($row = mysqli_fetch_assoc($result)) {
-                                                   
-                                                   
+
                                                     echo '<tr>';
-                                                        echo "<td>{$row['id']}</td>";
-                                                        echo "<td>{$row['name']}</td>";
-                                                        echo "<td>{$row['size']}</td>";
+                                                    echo "<td>{$row['id']}</td>";
+                                                    echo "<td>{$row['name']}</td>";
+                                                    echo "<td>{$row['size']}</td>";
+											   	}
+												?>
+												<!--   
+												<?php //include ('process-download.php');?>
+												<?php //foreach ($files as $file):?>
+													<tr>
+													<td><a href="upload-index.php?id=<?php //echo $file['id'] ?>"><i class="fas fa-download"></i></a></td>
+													</tr>
+												<?php //endforeach;?>	
+												-->
+												<?php
+											   	{
                                                         
                                                     echo '</tr>';
                                                 }
