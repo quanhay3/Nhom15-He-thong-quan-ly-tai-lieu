@@ -16,8 +16,6 @@ if(isset($_GET['response'])){
     $phone    = $_POST['phone'];
     $email     = $_POST['email'];
     $location  = $_POST['location'];
-    
-
     require("../config/connect.php");
 
     $sql = "INSERT INTO information_user(first_name,last_name,phone,email,location)
