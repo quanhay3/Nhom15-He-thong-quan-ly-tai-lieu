@@ -28,6 +28,7 @@ if (isset($_GET['id'])) {
         header('Pragma: public');
         header('Content-Length: ' . filesize('downloads/' . $file['name']));
         readfile('downloads/' . $file['name']);
+        
 
         // Now update downloads count
         //$newCount = $file['downloads'] + 1;
