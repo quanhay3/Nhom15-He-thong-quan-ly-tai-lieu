@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 04, 2021 lúc 07:26 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.10
+-- Host: 127.0.0.1
+-- Generation Time: Nov 05, 2021 at 09:38 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,31 +18,32 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `files_management`
+-- Database: `files_management`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `admin`
+-- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`username`, `password`) VALUES
-('admin', 'admin');
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `documents`
+-- Table structure for table `documents`
 --
 
 CREATE TABLE `documents` (
@@ -52,28 +53,22 @@ CREATE TABLE `documents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `documents`
+-- Dumping data for table `documents`
 --
 
 INSERT INTO `documents` (`id`, `name`, `size`) VALUES
-(1, 'ádfasdcsacdsac.docx', 0),
-(2, 'ádfasdcsacdsac.docx', 0),
-(3, 'ádfasdcsacdsac.docx', 11935),
-(4, '12324135345.docx', 11918),
-(5, 'Bài tập Java số 2.pdf', 596832),
-(6, '2021_Web Programming Projects.pdf', 299057),
-(7, 'Dethigiuaky_2021.pdf', 136277),
-(8, 'screenshot xoa.png', 241014),
-(9, 'Report_2021.docx', 794045),
-(0, 'tim hieu ve SEO.docx', 14697),
-(0, 'tim hieu ve SEO.docx', 14697),
-(0, 'matmacodien.docx', 246202),
-(0, 'Chương 1.docx', 21971);
+(3, 'Bài tập Java số 2.pdf', 596832),
+(4, '2021_Web Programming Projects.pdf', 299057),
+(5, 'Dethigiuaky_2021.pdf', 136277),
+(7, 'Report_2021.docx', 794045),
+(8, 'Cây TT bài 2.png', 193438),
+(10, 'screenshot add 2.png', 253307),
+(11, 'matmacodien.docx', 246202);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `information_user`
+-- Table structure for table `information_user`
 --
 
 CREATE TABLE `information_user` (
@@ -86,17 +81,16 @@ CREATE TABLE `information_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `information_user`
+-- Dumping data for table `information_user`
 --
 
 INSERT INTO `information_user` (`id`, `first_name`, `last_name`, `phone`, `email`, `location`) VALUES
-(1, 'Nguyễn', 'Phụ Quân', 982268313, 'quanhay23@gmail.com', 'Đình Bảng- Từ Sơn- Bắc Ninh'),
-(6, '', '', 0, '', '');
+(1, 'Nguyễn', 'Phụ Quân', 982268313, 'quanhay23@gmail.com', 'Đình Bảng- Từ Sơn- Bắc Ninh');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -108,49 +102,71 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`userid`, `username`, `email`, `password`, `level`) VALUES
-(1, 'admin', '123@gmail.com', '123', 1),
-(9, 'zxc', 'zxc@gmail.com', '123', 1),
-(10, 'fsa', 'fsa@gmail.com', '123', 1),
-(11, 'uio', 'uio@gmail.com', '123', 1),
-(12, 'bcv', 'bcv@gmail.com', '123', 1),
 (45, 'quanhay3', 'quanhay23@gmail.com', 'quanhay3', 0),
-(51, 'quan', 'quanhay3@gmail.com', '$2y$10$QouDLBWrYNUNL.m9wbQniO6zynQvJ6jm21MbwnojoPBslQ4i.qVqG', 0);
+(51, 'quan', 'quanhay3@gmail.com', '$2y$10$QouDLBWrYNUNL.m9wbQniO6zynQvJ6jm21MbwnojoPBslQ4i.qVqG', 0),
+(52, 'lol', 'lol@gmail.com', '$2y$10$eZbOfu.8NjimkOkP6aPrm.VUpR77T73JKa03a6TjDXrbbzmoyoH3y', 0),
+(54, 'pro', 'pro@gmail.com', '$2y$10$ewu.6kviEvjZVDlsFfQJNOnjyVA07ugult/YBlnQV9Er/8K15CivO', 0),
+(55, 'abc', 'abc@gmail.com', '$2y$10$.6ggTqGujo.hxsWjpne1WOeMRKw3dPllQ4S2x36EVIDSmBfzS6naO', 0);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `information_user`
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `documents`
+--
+ALTER TABLE `documents`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `information_user`
 --
 ALTER TABLE `information_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userid`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `information_user`
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `documents`
+--
+ALTER TABLE `documents`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `information_user`
 --
 ALTER TABLE `information_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

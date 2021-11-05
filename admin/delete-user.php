@@ -4,10 +4,10 @@
     include('../config/connect.php');
 
     // 1. get the ID of Admin to be deleted
-    $id_us = $_GET['id_us'];
+    $id = $_GET['id'];
 
     //2. Create SQL Query to Delete Admin
-    $sql = "DELETE FROM information_user WHERE id_us=$id_us";
+    $sql = "DELETE FROM information_user WHERE id=$id";
     $res = mysqli_query($conn, $sql);
     if($res==TRUE){
         $value='xoa';

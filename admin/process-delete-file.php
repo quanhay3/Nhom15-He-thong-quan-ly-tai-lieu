@@ -5,7 +5,7 @@
 
 	if (mysqli_query($conn, $sql)) {
 
-	    echo "File deleted successfully";
+		echo "<script>alert('Xóa thành công.')</script>";
 		header("location:delete-file-index.php?response=$response");
 
 	} else {

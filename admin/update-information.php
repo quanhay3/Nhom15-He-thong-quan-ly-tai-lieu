@@ -113,4 +113,4 @@
         </div><!--/col-9-->
     </div><!--/row-->
 </form>    
-<script src ="../admin/js/scripts-img.js"></script>                    
+<script src ="../admin/js/scripts-img.js"></script>                  
