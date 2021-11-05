@@ -47,6 +47,11 @@
                         <li class="nav-item">
                         </li>
                     </ul>
+					<form method="post" action="search-Results.php">
+                    <input type="text" name="search"/>
+                    <input type="submit" name="submit" value="Search">
+                    </form>
+					
 					
                     </div>
                 </div>
@@ -243,11 +248,9 @@
 				<div class="d-flex align-items-center">
 					
 					<div>
-					<form method="post" action="search-Results.php">
-                    <input type="text" name="search" width="35 px"/>
-                    <input type="submit" name="submit" value="Search">
+					
 					</div>				
-					</form>
+					
 					<div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-outline-secondary">View all</a>
 					</div>
 				</div>
