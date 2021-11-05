@@ -58,8 +58,8 @@ body {
         if (!$conn) {
             die("Kết nối thất bại  .Kiểm tra lại các tham số    khai báo kết nối");
         }
-        $id_us = $_GET['id_us'];
-        $query = mysqli_query($conn, "SELECT * from `information_user` where id_us='$id_us'");
+        $id = $_GET['id'];
+        $query = mysqli_query($conn, "SELECT * from `information_user` where id='$id'");
         $row = mysqli_fetch_assoc($query);
     ?>
 <div class="container rounded bg-white mt-5">

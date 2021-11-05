@@ -1,6 +1,6 @@
 <?php
   if(isset($_POST['btnSave'])){
-    $id_us      = $_POST['id_us'];
+    $id      = $_POST['id'];
     $first_name     = $_POST['first_name'];
     $last_name    = $_POST['last_name'];
     $email    = $_POST['email'];
@@ -10,7 +10,7 @@
 
     require("../config/connect.php");
 
-    $sql = "UPDATE information_user SET id_us='$id_us', first_name='$first_name',last_name = '$last_name', email='$email', phone='$phone',location='$location' WHERE id_us='$id_us'";
+    $sql = "UPDATE information_user SET id='$id', first_name='$first_name',last_name = '$last_name', email='$email', phone='$phone',location='$location' WHERE id='$id'";
 
 
     echo $sql."<br>";
