@@ -66,7 +66,7 @@ body {
 
     <div class="row">
         <div class="col-md-4 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img src="images/<?php echo $row['profile_image']; ?>" width="100" style="border-radius:50%; width:70%; "><span class="font-weight-bold"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></span><span class="text-black-50"><?php echo $row['email']; ?></span><span><?php echo $row['location']; ?></span></div>
         </div>
         <div class="col-md-8">
             <div class="p-3 py-5">

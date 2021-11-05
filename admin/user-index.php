@@ -38,8 +38,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/update-information.php">Thông tin cá nhân</a></li>
-							<li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Thông tin tác giả</a></li>
+					
                         </ul>
                         </li>
                         <li class="nav-item">

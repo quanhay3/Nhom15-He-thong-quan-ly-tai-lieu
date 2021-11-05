@@ -1,31 +1,4 @@
-<?php
-  if(isset($_POST['btnSave'])){
-    
-    $first_name     = $_POST['first_name'];
-    $last_name    = $_POST['last_name'];
-    $phone    = $_POST['phone'];
-    $email     = $_POST['email'];
-    $location  = $_POST['location'];
-    
-
-    require("../config/connect.php");
-
-    $sql = "INSERT INTO information_user(first_name,last_name,phone,email,location)
-    VALUES('$first_name','$last_name','$phone','$email','$location')";
-
-    echo $sql."<br>";
-
-    if(mysqli_query($conn,$sql)==TRUE){
-      $value='successfully';
-      header("Location:user-index.php?response=$value");
-    }else{
-      $value='existed';
-      header("Location:user-index.php?response=$value");
-    }
-    mysqli_close($conn);
-  }
-
-?>
+<?php include'processForm.php'?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -44,7 +17,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
+<style>
+  #profileDisplay{
+    display:block;
+    width:100%;
+    margin: 10px auto;
+    border-radius:50%;
+  }
+</style>
 
 <hr>
 <div class="container bootstrap snippet">
@@ -52,14 +32,24 @@
   		<div class="col-sm-10"><h1>User name</h1></div>
     	<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
     </div>
+
+<form class="form" action="update-information.php" method="post" id="registrationForm" enctype="multipart/form-data">
     <div class="row">
   		<div class="col-sm-3"><!--left col-->
               
 
       <div class="text-center">
-        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block file-upload">
+        
+          <h3>chọn hình ảnh</h3>
+
+          <?php if(!empty($msg)): ?>
+              <div class="alert <?php echo $css_class; ?>" >
+                  <?php echo $msg; ?>
+              </div>
+           <?php endif; ?>
+           <img src="../admin/images/placeholer.png" onclick="triggerClick()" id="profileDisplay" />  
+          <input type="file" name="profileImage" onchange="displayImage(this)" id="profileImage" ">
+          
       </div></hr><br>
             <div class="panel-body">
             	<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
@@ -113,13 +103,14 @@
                            <div class="col-xs-12">
                                 <br>
                               	<button class="btn btn-lg btn-success" type="submit" name="btnSave"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                               	<button class="btn btn-lg btn-success" type="button" style="text-decoration:none;"><i class="glyphicon glyphicon-ok-sign"></i> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php">Back To Home </a> </button>
                             </div>
                       </div>
-              	</form>
+              	
               
               <hr>
             </div>
         </div><!--/col-9-->
     </div><!--/row-->
-                         
+</form>    
+<script src ="../admin/js/scripts-img.js"></script>                    
