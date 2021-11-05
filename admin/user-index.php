@@ -296,7 +296,6 @@
                                     $i=1;
                                     while($row = mysqli_fetch_assoc($result)){
                             ?>
-                            
                             <tr>
                             <th scope="row"><?php echo $i; ?> </th>
                             <td><?php echo $row['name']; ?> </td>
