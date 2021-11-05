@@ -41,7 +41,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/update-information.php">Thông tin cá nhân</a></li>
-                            <li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/information-user.php">Thông tin cá nhân</a></li>
+
+							<li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Thông tin tác giả</a></li>
                         </ul>
                         </li>
@@ -65,7 +67,7 @@
 				</div>
 				<h5 class="my-3">My Drive</h5>
 				<div class="fm-menu">
-				<div class="list-group list-group-flush"> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php" class="list-group-item py-1"><i class="bx bx-folder me-2"></i><span>All Files</span></a>
+					<div class="list-group list-group-flush"> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php" class="list-group-item py-1"><i class="bx bx-folder me-2"></i><span>All Files</span></a>
 						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/download-index.php" class="list-group-item py-1"><i class="fas fa-download"></i><span>          Download</span></a>
 						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/delete-file-index.php" class="list-group-item py-1"><i class="bx bx-trash-alt me-2"></i><span>Deleted Files</span></a>
 						<a href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/edit-export.php" class="list-group-item py-1"><i class="bx bx-file me-2"></i><span>Documents</span></a>
@@ -74,8 +76,8 @@
 			</div>
 		</div>
 		<div class="card">
-		<div class="card-body">
-		<h5 class="mb-0 text-primary font-weight-bold">201 GB <span class="float-end text-secondary">512 GB</span></h5>
+			<div class="card-body">
+				<h5 class="mb-0 text-primary font-weight-bold">201 GB <span class="float-end text-secondary">512 GB</span></h5>
 				<p class="mb-0 mt-2"><span class="text-secondary">Used</span><span class="float-end text-primary">Upgrade</span>
 				</p>
 				<div class="progress mt-3" style="height:7px;">
@@ -244,39 +246,59 @@
 				</div>
 				<!--end row-->
 				<div class="d-flex align-items-center">
-					<div>
-						<h5 class="mb-0">Choose File To Delete</h5>
-						
-
-					</div>
-					<div class="ms-auto"><a href="javascript:;" class="btn btn-sm btn-outline-secondary">View all</a>
-					</div>
+					
+					
 				</div>
 				<div class="table-responsive mt-3">
-				<table class="table ">
-						<?php include 'process-download.php';?>
-						<thead>
-						<tr>
-						<th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Size</th>
-						<th scope="col">Delete</th>
-						</tr>
-						</thead>
+				<table class="table table-striped table-hover table-sm mb-0">
+						
 						<tbody>
-						<?php foreach ($files as $file): ?>
-							<tr>
-							<td><?php echo $file['id']; ?></td>
-							<td><?php echo $file['name']; ?></td>
-							<td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
-							
-							<td><a href="process-delete-file.php?id=<?php echo $file['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>
-							</tr>
-						<?php endforeach;?>
+                            <?php
+                                    include ('../config/connect.php');
+                                    $search=$_POST['search'];
 
-						</tbody>
-</body>						
-				</table>
+                                    //Lệnh sql
+                                    $sql="SELECT * from documents
+                                    where name like '%$search%'";
+
+                                    //Chạy lệnh
+                                    if($result=mysqli_query($conn, $sql)){
+                                            //Tìm kết quả 
+                                $count = mysqli_num_rows($result);
+
+                                $pageTitle="Search Results";
+                                print <<<HERE
+                                <h2>Search Results</h2>
+                                <h3>$count results found for "$search"</h3>
+                                <table cellpadding="15">
+                                HERE;
+                                            //loop through results and get variables
+                                    while ($row=mysqli_fetch_array($result)){
+                                        $id=$row['id'];
+                                        $name=$row['name'];
+                                        $size=$row['size'];
+
+                                        print <<<HERE
+                                            <tr>
+                                                    <td><br />ID: $id<br /><label>                       </label><strong>$name</strong><label>                      </label><br />Size: $size<br />
+                                                    <td>
+                                                    <form method="post" action="process-download.php" >
+                                                    <input type="hidden" name="sel_record" value="$id">
+                                                    <input type="submit" name="download" value="Download">
+                                                    </form>
+                                                    </td>
+                                                    
+                                                    
+                                HERE;        
+                                    }
+
+                                }else{
+                                        echo "Error";
+                                }
+                                    print "</tr></table>";
+                            ?>
+                        </tbody>
+					</table>
 				</div>
 			</div>
 		</div>
