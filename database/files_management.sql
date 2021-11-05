@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2021 at 04:48 AM
+-- Generation Time: Nov 05, 2021 at 09:38 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -36,8 +37,8 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`username`, `password`) VALUES
-('admin', 'admin');
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -105,20 +106,21 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userid`, `username`, `email`, `password`, `level`) VALUES
-(1, 'admin', '123@gmail.com', '123', 1),
-(9, 'zxc', 'zxc@gmail.com', '123', 1),
-(10, 'fsa', 'fsa@gmail.com', '123', 1),
-(11, 'uio', 'uio@gmail.com', '123', 1),
-(12, 'bcv', 'bcv@gmail.com', '123', 1),
 (45, 'quanhay3', 'quanhay23@gmail.com', 'quanhay3', 0),
 (51, 'quan', 'quanhay3@gmail.com', '$2y$10$QouDLBWrYNUNL.m9wbQniO6zynQvJ6jm21MbwnojoPBslQ4i.qVqG', 0),
 (52, 'lol', 'lol@gmail.com', '$2y$10$eZbOfu.8NjimkOkP6aPrm.VUpR77T73JKa03a6TjDXrbbzmoyoH3y', 0),
-(53, 'abc', 'abc@gmail.com', '123', 0),
-(54, 'pro', 'pro@gmail.com', '$2y$10$ewu.6kviEvjZVDlsFfQJNOnjyVA07ugult/YBlnQV9Er/8K15CivO', 0);
+(54, 'pro', 'pro@gmail.com', '$2y$10$ewu.6kviEvjZVDlsFfQJNOnjyVA07ugult/YBlnQV9Er/8K15CivO', 0),
+(55, 'abc', 'abc@gmail.com', '$2y$10$.6ggTqGujo.hxsWjpne1WOeMRKw3dPllQ4S2x36EVIDSmBfzS6naO', 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `documents`
@@ -143,22 +145,28 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `information_user`
 --
 ALTER TABLE `information_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
