@@ -218,6 +218,7 @@ $(document).ready(function(){
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Image User</th>
                         <th>First name</th>						
                         <th>Last name</th>
                         <th>Phone</th>
@@ -248,6 +249,7 @@ $(document).ready(function(){
                             
                             <tr>
                             <th scope="row"><?php echo $i; ?> </th>
+                            <td><img src="images/<?php echo $row['profile_image']; ?>" width="80" /></td>
                             <td><?php echo $row['first_name']; ?> </td>
                             <td><?php echo $row['last_name']; ?> </td>
                             <td><?php echo $row['phone']; ?> </td>

@@ -1,39 +1,4 @@
-<?php
-if(isset($_GET['response'])){
-                        if($_GET['response']=='successfully'){
-                            echo "<script>alert('Cập Nhật thành công.')</script>";
-                        }
-                        if($_GET['response']=='existed'){
-                            echo "<script>alert('Cập Nhật thất bại.')</script>";
-                        }
-					}
-					?>
-<?php
-  if(isset($_POST['btnSave'])){
-    
-    $first_name     = $_POST['first_name'];
-    $last_name    = $_POST['last_name'];
-    $phone    = $_POST['phone'];
-    $email     = $_POST['email'];
-    $location  = $_POST['location'];
-    require("../config/connect.php");
-
-    $sql = "INSERT INTO information_user(first_name,last_name,phone,email,location)
-    VALUES('$first_name','$last_name','$phone','$email','$location')";
-
-    echo $sql."<br>";
-
-    if(mysqli_query($conn,$sql)==TRUE){
-      $value='successfully';
-      header("Location:update-information.php?response=$value");
-    }else{
-      $value='existed';
-      header("Location:update-information.php?response=$value");
-    }
-    mysqli_close($conn);
-  }
-
-?>
+<?php include'processForm.php'?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -52,20 +17,39 @@ if(isset($_GET['response'])){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
+<style>
+  #profileDisplay{
+    display:block;
+    width:100%;
+    margin: 10px auto;
+    border-radius:50%;
+  }
+</style>
 
 <hr>
 <div class="container bootstrap snippet">
     <div class="row">
   		<div class="col-sm-10"><h1>User name</h1></div>
-    	<div class="col-sm-2"><a href="" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
+    	<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
     </div>
+
+<form class="form" action="update-information.php" method="post" id="registrationForm" enctype="multipart/form-data">
     <div class="row">
   		<div class="col-sm-3"><!--left col-->
+              
+
       <div class="text-center">
-        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block file-upload">
+        
+          <h3>chọn hình ảnh</h3>
+
+          <?php if(!empty($msg)): ?>
+              <div class="alert <?php echo $css_class; ?>" >
+                  <?php echo $msg; ?>
+              </div>
+           <?php endif; ?>
+           <img src="../admin/images/placeholer.png" onclick="triggerClick()" id="profileDisplay" />  
+          <input type="file" name="profileImage" onchange="displayImage(this)" id="profileImage" ">
+          
       </div></hr><br>
             <div class="panel-body">
             	<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
@@ -119,58 +103,14 @@ if(isset($_GET['response'])){
                            <div class="col-xs-12">
                                 <br>
                               	<button class="btn btn-lg btn-success" type="submit" name="btnSave"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                <a class="navbar-brand" href="http://localhost:81/Nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php">Home</a>
+                               	<button class="btn btn-lg btn-success" type="button" style="text-decoration:none;"><i class="glyphicon glyphicon-ok-sign"></i> <a href="http://localhost:81/nhom15-He-thong-quan-ly-tai-lieu/admin/user-index.php">Back To Home </a> </button>
                             </div>
                       </div>
-              	</form>
-                <table class="table">
-                        <thead>
-                            <tr>
-                            <th>ID</th>
-                        <th>First name</th>						
-                        <th>Last name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                 //lấy dữ liệu từ CSDL và để ra bảng (phần lặp lại)
-                                //bước 1:kết nối tời csdl(mysql)
-                                $conn = mysqli_connect('localhost','root','','files_management');
-                                if(!$conn){
-                                    die("Không thể kết nối,kiểm tra lại các tham số kết nối");
-                                }
-
-                                //bước 2 khai báo câu lệnh thực thi và thực hiện truy vấn
-                                $sql = "SELECT * FROM information_user";
-                                $result = mysqli_query($conn,$sql);
-
-                                //bước 3 xử lý kết quả trả về
-                                if(mysqli_num_rows($result) > 0){
-                                    $i=1;
-                                    while($row = mysqli_fetch_assoc($result)){
-                            ?>
-                            
-                            <tr>
-                            <th scope="row"><?php echo $i; ?> </th>
-                            <td><?php echo $row['first_name']; ?> </td>
-                            <td><?php echo $row['last_name']; ?> </td>
-                            <td><?php echo $row['phone']; ?> </td>
-                            <td><?php echo $row['email']; ?> </td>
-                            <td><?php echo $row['location']; ?> </td>
-                            </tr>
-                            <?php
-                                $i++;
-                                }
-                            }
-                            ?>
-                        </tbody>
-                        </table>
+              	
               
               <hr>
             </div>
         </div><!--/col-9-->
     </div><!--/row-->
-                         
+</form>    
+<script src ="../admin/js/scripts-img.js"></script>                  
