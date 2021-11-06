@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2021 at 09:38 AM
+-- Generation Time: Nov 06, 2021 at 03:48 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -57,12 +57,9 @@ CREATE TABLE `documents` (
 --
 
 INSERT INTO `documents` (`id`, `name`, `size`) VALUES
-(3, 'Bài tập Java số 2.pdf', 596832),
 (4, '2021_Web Programming Projects.pdf', 299057),
 (5, 'Dethigiuaky_2021.pdf', 136277),
 (7, 'Report_2021.docx', 794045),
-(8, 'Cây TT bài 2.png', 193438),
-(10, 'screenshot add 2.png', 253307),
 (11, 'matmacodien.docx', 246202);
 
 -- --------------------------------------------------------
@@ -77,15 +74,17 @@ CREATE TABLE `information_user` (
   `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `phone` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `location` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `location` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `profile_image` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `information_user`
 --
 
-INSERT INTO `information_user` (`id`, `first_name`, `last_name`, `phone`, `email`, `location`) VALUES
-(1, 'Nguyễn', 'Phụ Quân', 982268313, 'quanhay23@gmail.com', 'Đình Bảng- Từ Sơn- Bắc Ninh');
+INSERT INTO `information_user` (`id`, `first_name`, `last_name`, `phone`, `email`, `location`, `profile_image`) VALUES
+(16, 'Nguyen', 'Quang B', 329494535, 'quanganhnguyen2382001@gmail.com', 'JAPAN', '1636166029_Cây TT bài 2.png'),
+(21, 'Nguyen', 'Quang B', 329494535, 'quanganhnguyen2382001@gmail.com', 'JAPAN', '1636166218_Cây TT bài 2.png');
 
 -- --------------------------------------------------------
 
@@ -110,7 +109,9 @@ INSERT INTO `user` (`userid`, `username`, `email`, `password`, `level`) VALUES
 (51, 'quan', 'quanhay3@gmail.com', '$2y$10$QouDLBWrYNUNL.m9wbQniO6zynQvJ6jm21MbwnojoPBslQ4i.qVqG', 0),
 (52, 'lol', 'lol@gmail.com', '$2y$10$eZbOfu.8NjimkOkP6aPrm.VUpR77T73JKa03a6TjDXrbbzmoyoH3y', 0),
 (54, 'pro', 'pro@gmail.com', '$2y$10$ewu.6kviEvjZVDlsFfQJNOnjyVA07ugult/YBlnQV9Er/8K15CivO', 0),
-(55, 'abc', 'abc@gmail.com', '$2y$10$.6ggTqGujo.hxsWjpne1WOeMRKw3dPllQ4S2x36EVIDSmBfzS6naO', 0);
+(56, 'abc', 'abc@gmail.com', '$2y$10$fd73vt2mU8tHYzY/Go02p.sieBY3/AwuhtLkqSTSnnQijS74a/qky', 0),
+(57, 'quang', 'quang@gmail.com', '$2y$10$WcrIrBXl6ZMsvmRSplIQxOB0GVfIGCIkuqZFirLwlpLFXCvvVGzU.', 0),
+(58, 'chien', 'chien@gmail.com', '$2y$10$YVzyspdb.Wn0eGQydYJDFOB0mJxky5Xs4XkaU2skhGjpwfT4z0RT6', 0);
 
 --
 -- Indexes for dumped tables
@@ -154,19 +155,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `information_user`
 --
 ALTER TABLE `information_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
