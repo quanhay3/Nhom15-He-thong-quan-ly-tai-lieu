@@ -113,4 +113,51 @@
         </div><!--/col-9-->
     </div><!--/row-->
 </form>    
+<table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Image User</th>
+                        <th>First name</th>						
+                        <th>Last name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                            <?php
+                                //lấy dữ liệu từ CSDL và để ra bảng (phần lặp lại)
+                                //bước 1:kết nối tời csdl(mysql)
+                                $conn = mysqli_connect('localhost','root','','files_management');
+                                if(!$conn){
+                                    die("Không thể kết nối,kiểm tra lại các tham số kết nối");
+                                }
+
+                                //bước 2 khai báo câu lệnh thực thi và thực hiện truy vấn
+                                $sql = "SELECT * FROM information_user";
+                                $result = mysqli_query($conn,$sql);
+
+                                //bước 3 xử lý kết quả trả về
+                                if(mysqli_num_rows($result) > 0){
+                                    $i=1;
+                                    while($row = mysqli_fetch_assoc($result)){
+                            ?>
+                            
+                            <tr>
+                            <th scope="row"><?php echo $i; ?> </th>
+                            <td><img src="images/<?php echo $row['profile_image']; ?>" width="80" /></td>
+                            <td><?php echo $row['first_name']; ?> </td>
+                            <td><?php echo $row['last_name']; ?> </td>
+                            <td><?php echo $row['phone']; ?> </td>
+                            <td><?php echo $row['email']; ?> </td>
+                            <td><?php echo $row['location']; ?> </td>
+                            </tr>
+                            <?php
+                                $i++;
+                                }
+                            }
+                           ?>
+                </tbody>                   
+            </table>
 <script src ="../admin/js/scripts-img.js"></script>                  
